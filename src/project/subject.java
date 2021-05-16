@@ -637,7 +637,7 @@ public class subject extends javax.swing.JFrame {
         // TODO add your handling code here:
          try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timemangetest","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
             String sql = "insert into subject values (null, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
