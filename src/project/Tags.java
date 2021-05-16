@@ -8,7 +8,7 @@ import net.proteanit.sql.DbUtils;
 
 /**
  *
- * @author Noha Menani
+ * @author S. Noha Menani
  */
 
 //creating jframe for tag details and management
