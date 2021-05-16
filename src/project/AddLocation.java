@@ -41,7 +41,7 @@ public class AddLocation extends javax.swing.JFrame {
         
         try{
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
                 
                 //Selecting updated data from database to Student Table
                 PreparedStatement pstmt = conn.prepareStatement("select * from location");       
@@ -485,7 +485,7 @@ public class AddLocation extends javax.swing.JFrame {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             //deleting location data in database
             String sql = "delete from location where Id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -500,7 +500,7 @@ public class AddLocation extends javax.swing.JFrame {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
             //Selecting updated data from database to Student Table
             PreparedStatement pstmt = conn.prepareStatement("select * from location");
@@ -549,7 +549,7 @@ public class AddLocation extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
             //Updating location data to database
             String sql = "Update location set  build = ?, room = ?, type = ?, cap = ? where Id = ?";
@@ -588,7 +588,7 @@ public class AddLocation extends javax.swing.JFrame {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
             //Selecting updated data from database to Student Table
             PreparedStatement pstmt = conn.prepareStatement("select * from location");
@@ -624,7 +624,7 @@ public class AddLocation extends javax.swing.JFrame {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
             //                    Class.forName("com.mysql.jdbc.Driver");
             //                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
@@ -663,7 +663,7 @@ public class AddLocation extends javax.swing.JFrame {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/locationdb","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
             //Selecting updated data from database to Student Table after adding
             PreparedStatement pstmt = conn.prepareStatement("select * from location");
