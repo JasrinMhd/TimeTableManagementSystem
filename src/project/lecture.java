@@ -1116,7 +1116,7 @@ public class lecture extends javax.swing.JFrame {
 
     private void txtFacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFacultyActionPerformed
         // TODO add your handling code here ComputingEngineeringBusinessHumanitiesSciences
-         
+         txtDepartment.removeAllItems();
         if(txtFaculty.getSelectedItem().equals("Computing")){
             txtDepartment.setSelectedItem(null);
             txtDepartment.addItem("IT");
