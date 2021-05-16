@@ -175,6 +175,11 @@ public class subject extends javax.swing.JFrame {
 
         session.setText("Sessions");
         session.setPreferredSize(new java.awt.Dimension(131, 30));
+        session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sessionActionPerformed(evt);
+            }
+        });
 
         location.setText("Locations");
         location.setPreferredSize(new java.awt.Dimension(131, 30));
@@ -576,7 +581,8 @@ public class subject extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodeActionPerformed
 
     private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        new lecture().setVisible(true);     
     }//GEN-LAST:event_lectureActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -758,6 +764,11 @@ public class subject extends javax.swing.JFrame {
     private void txtLabHrsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLabHrsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLabHrsActionPerformed
+
+    private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
+        setVisible(false);
+        new sessions().setVisible(true);     
+    }//GEN-LAST:event_sessionActionPerformed
 
     /**
      * @param args the command line arguments

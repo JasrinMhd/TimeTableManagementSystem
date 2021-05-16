@@ -220,6 +220,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sessionActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="location">
               <Properties>
