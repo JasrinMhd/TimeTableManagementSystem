@@ -31,7 +31,6 @@ import net.proteanit.sql.DbUtils;
 public class lecture extends javax.swing.JFrame {
 
     private boolean True;   //sometimes you have to change this
-    
     private static final String username = "root";
     private static final String password = "";
     private static final String dataConn = "jdbc:mysql://localhost:3306/timetablesystem";
@@ -63,7 +62,7 @@ public class lecture extends javax.swing.JFrame {
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timemangetest","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
             String sql = "select * from lecture";
             
@@ -624,7 +623,7 @@ public class lecture extends javax.swing.JFrame {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timemangetest","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
             int row = jTableLec.getSelectedRow();
             String value = (jTableLec.getModel().getValueAt(row, 0).toString());
@@ -758,7 +757,7 @@ public class lecture extends javax.swing.JFrame {
         
          try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timemangetest","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
             String sql = "Update lecture set   Name = ?, Faculty = ? , Department = ?, Building = ?, Center = ? , Level = ? , Rank = ? where EmpID = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -800,7 +799,7 @@ public class lecture extends javax.swing.JFrame {
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timemangetest","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             PreparedStatement pstmt = conn.prepareStatement("select * from lecture");       
             ResultSet rs = pstmt.executeQuery();
             
@@ -835,7 +834,7 @@ public class lecture extends javax.swing.JFrame {
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timemangetest","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
             String sql = "insert into lecture values (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
