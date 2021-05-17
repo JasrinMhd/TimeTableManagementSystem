@@ -213,12 +213,22 @@ public class lecture extends javax.swing.JFrame {
 
         subject.setText("Subjects");
         subject.setPreferredSize(new java.awt.Dimension(131, 30));
+        subject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subjectActionPerformed(evt);
+            }
+        });
 
         tag.setText("Tags");
         tag.setPreferredSize(new java.awt.Dimension(131, 30));
 
         session.setText("Sessions");
         session.setPreferredSize(new java.awt.Dimension(131, 30));
+        session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sessionActionPerformed(evt);
+            }
+        });
 
         location.setText("Locations");
         location.setPreferredSize(new java.awt.Dimension(131, 30));
@@ -1106,7 +1116,7 @@ public class lecture extends javax.swing.JFrame {
 
     private void txtFacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFacultyActionPerformed
         // TODO add your handling code here ComputingEngineeringBusinessHumanitiesSciences
-         
+         txtDepartment.removeAllItems();
         if(txtFaculty.getSelectedItem().equals("Computing")){
             txtDepartment.setSelectedItem(null);
             txtDepartment.addItem("IT");
@@ -1146,6 +1156,16 @@ public class lecture extends javax.swing.JFrame {
     private void txtBuildingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuildingActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuildingActionPerformed
+
+    private void subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectActionPerformed
+       setVisible(false);
+        new subject().setVisible(true);     
+    }//GEN-LAST:event_subjectActionPerformed
+
+    private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
+        setVisible(false);
+        new sessions().setVisible(true);     
+    }//GEN-LAST:event_sessionActionPerformed
 
     /**
      * @param args the command line arguments
