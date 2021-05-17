@@ -81,6 +81,7 @@ public class sessions extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         logo = new javax.swing.JPanel();
         logoLab = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         contnt = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLecture = new javax.swing.JComboBox<>();
@@ -103,11 +104,16 @@ public class sessions extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         id = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        contnt1 = new javax.swing.JPanel();
+        id1 = new javax.swing.JLabel();
+        contnt2 = new javax.swing.JPanel();
+        id2 = new javax.swing.JLabel();
+        contnt3 = new javax.swing.JPanel();
+        id3 = new javax.swing.JLabel();
+        contnt4 = new javax.swing.JPanel();
+        id4 = new javax.swing.JLabel();
+        contnt5 = new javax.swing.JPanel();
+        id5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,6 +251,8 @@ public class sessions extends javax.swing.JFrame {
                 .addComponent(logoLab))
         );
 
+        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+
         jLabel2.setText("Select Lecture");
 
         jLabel3.setText("Subject code");
@@ -324,38 +332,6 @@ public class sessions extends javax.swing.JFrame {
         jLabel10.setText("SESSIONS MANAGEMENT");
         jLabel10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
 
-        jButton5.setBackground(new java.awt.Color(153, 204, 255));
-        jButton5.setText("Manage Sessions");
-        jButton5.setFocusable(false);
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setSelected(true);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Add Consecutive Sessions");
-        jButton6.setFocusable(false);
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton7.setText(" Add Parallel");
-        jButton7.setFocusable(false);
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton8.setText("Non Overlapping Sessions");
-        jButton8.setFocusable(false);
-        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton9.setText("Add Preferred Session");
-        jButton9.setFocusable(false);
-        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
         javax.swing.GroupLayout contntLayout = new javax.swing.GroupLayout(contnt);
         contnt.setLayout(contntLayout);
         contntLayout.setHorizontalGroup(
@@ -369,73 +345,56 @@ public class sessions extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addGap(158, 158, 158)
                         .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addGap(81, 81, 81))
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contntLayout.createSequentialGroup()
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(30, 30, 30)
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(57, 57, 57)
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7))
-                                    .addGroup(contntLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(25, 25, 25)))
-                                .addGap(21, 21, 21)
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(contntLayout.createSequentialGroup()
-                                        .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel8))))
-                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 605, Short.MAX_VALUE))))
             .addGroup(contntLayout.createSequentialGroup()
-                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(contntLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(contntLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton9)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(contntLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(contntLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(30, 30, 30)
+                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
+                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel7))
+                    .addGroup(contntLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(25, 25, 25)))
+                .addGap(21, 21, 21)
+                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(contntLayout.createSequentialGroup()
+                        .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         contntLayout.setVerticalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contntLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton9)
-                    .addComponent(jButton8)
-                    .addComponent(jButton7)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel10)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(id)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -454,9 +413,7 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(id)
-                .addGap(18, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
@@ -465,6 +422,103 @@ public class sessions extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jTabbedPane1.addTab("Manage Sessions", contnt);
+
+        javax.swing.GroupLayout contnt1Layout = new javax.swing.GroupLayout(contnt1);
+        contnt1.setLayout(contnt1Layout);
+        contnt1Layout.setHorizontalGroup(
+            contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(id1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
+        );
+        contnt1Layout.setVerticalGroup(
+            contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(id1)
+                .addContainerGap(331, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Consecutive Sessions", contnt1);
+
+        javax.swing.GroupLayout contnt2Layout = new javax.swing.GroupLayout(contnt2);
+        contnt2.setLayout(contnt2Layout);
+        contnt2Layout.setHorizontalGroup(
+            contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
+        );
+        contnt2Layout.setVerticalGroup(
+            contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt2Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(id2)
+                .addContainerGap(331, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Non Overlapping Sessions", contnt2);
+
+        javax.swing.GroupLayout contnt3Layout = new javax.swing.GroupLayout(contnt3);
+        contnt3.setLayout(contnt3Layout);
+        contnt3Layout.setHorizontalGroup(
+            contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(id3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
+        );
+        contnt3Layout.setVerticalGroup(
+            contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt3Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(id3)
+                .addContainerGap(331, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(" Parallel Sessions", contnt3);
+
+        javax.swing.GroupLayout contnt4Layout = new javax.swing.GroupLayout(contnt4);
+        contnt4.setLayout(contnt4Layout);
+        contnt4Layout.setHorizontalGroup(
+            contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(id4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
+        );
+        contnt4Layout.setVerticalGroup(
+            contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt4Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(id4)
+                .addContainerGap(331, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Preferred Session", contnt4);
+
+        javax.swing.GroupLayout contnt5Layout = new javax.swing.GroupLayout(contnt5);
+        contnt5.setLayout(contnt5Layout);
+        contnt5Layout.setHorizontalGroup(
+            contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt5Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(id5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
+        );
+        contnt5Layout.setVerticalGroup(
+            contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contnt5Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(id5)
+                .addContainerGap(331, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Not Available Time", contnt5);
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -478,7 +532,7 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(contnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 714, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         bgLayout.setVerticalGroup(
@@ -490,9 +544,7 @@ public class sessions extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(contnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 11, Short.MAX_VALUE))))
+                    .addComponent(jTabbedPane1)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -602,88 +654,72 @@ public class sessions extends javax.swing.JFrame {
         
     }//GEN-LAST:event_WDHActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jLecture.setSelectedIndex(0);
-        jTag.setSelectedIndex(0);
-        jNoStud.setText("");
-        jGroup.setSelectedIndex(0);
-        jSubject.setSelectedIndex(0);
-        jDura.setText("");
-        id.setText("");
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectActionPerformed
+                setVisible(false);
+        new subject().setVisible(true);     
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_subjectActionPerformed
 
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            //	lecture	 tag	noOFStudents	groupID	subjectCode	duration
-            String sql = "Update session set   lecture = ?, tag = ? , noOFStudents = ?, groupID = ?, subjectCode = ? , durationHrs = ?  where id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, jLecture.getSelectedItem().toString());
-            pstmt.setString(2, jTag.getSelectedItem().toString());
-            pstmt.setString(3, jNoStud.getText());
-            pstmt.setString(4, jGroup.getSelectedItem().toString());
-            pstmt.setString(5, jSubject.getSelectedItem().toString());
-            pstmt.setString(6, jDura.getText());
+    private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
+       setVisible(false);
+        new lecture().setVisible(true);     
+    }//GEN-LAST:event_lectureActionPerformed
 
-            int row = TableSession.getSelectedRow();
-            String id = (TableSession.getModel().getValueAt(row, 0).toString());
-            pstmt.setString(7, id);
-
-            //to disable for editing  the TagID field
-
-            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Session updated succussfully");
-
-            DefaultTableModel model = (DefaultTableModel)TableSession.getModel();
-            model.setRowCount(0);
-            displaytable();
-
-            jLecture.setSelectedIndex(0);
-            jTag.setSelectedIndex(0);
-            jNoStud.setText("");
-            jGroup.setSelectedIndex(0);
-            jSubject.setSelectedIndex(0);
-            jDura.setText("");
-            
-
-            conn.close();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-
-        //refresh table after insert data
-        DefaultTableModel model = (DefaultTableModel)TableSession.getModel();
-        model.setRowCount(0);
-        displaytable();
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+    private void jTagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTagActionPerformed
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
-            int row = TableSession.getSelectedRow();
-            String value = (TableSession.getModel().getValueAt(row, 0).toString());
-            String query = "DELETE FROM session WHERE id="+value;
-            PreparedStatement pst = conn.prepareStatement(query);
-            pst.executeUpdate();
+            String sql = "select * from student";
 
-            DefaultTableModel model = (DefaultTableModel)TableSession.getModel();
-            model.setRowCount(0);
-            displaytable();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+            jGroup.removeAllItems();
+            while(rs.next()){
+                if(jTag.getSelectedItem().equals("Lec") || jTag.getSelectedItem().equals("Tute")){
 
-            JOptionPane.showMessageDialog(this, "Session deleted");
-            conn.close();
+                    jGroup.addItem(rs.getString("GroupID"));
+
+                }else if(jTag.getSelectedItem().equals("Lab")){
+
+                    jGroup.addItem(rs.getString("SubGroupID"));
+
+                }else{
+                    jGroup.setSelectedIndex(-1);
+                }
+            }
 
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
         }
+    }//GEN-LAST:event_jTagActionPerformed
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jNoStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNoStudActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jNoStudActionPerformed
+
+    private void TableSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableSessionMouseClicked
+        int i = TableSession.getSelectedRow();
+        TableModel model = TableSession.getModel();
+        //	lecture	 tag	noOFStudents	groupID	subjectCode	duration
+        //issue tag GroupID
+        //id.setText(model.getValueAt(i,6).toString());
+        String Lec = model.getValueAt(i,1).toString();
+        jLecture.setSelectedItem(Lec);
+
+        String tags = model.getValueAt(i,2).toString();
+        jTag.setSelectedItem(tags);
+
+        jNoStud.setText(model.getValueAt(i,3).toString());
+
+        String groupID = model.getValueAt(i,4).toString();
+        jGroup.setSelectedItem(groupID);
+
+        String subjectCode = model.getValueAt(i,5).toString();
+        jSubject.setSelectedItem(subjectCode);
+
+        jDura.setText(model.getValueAt(i,6).toString());
+    }//GEN-LAST:event_TableSessionMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
@@ -743,80 +779,87 @@ public class sessions extends javax.swing.JFrame {
 
         private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {
             // TODO add your handling code here:
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void TableSessionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableSessionMouseClicked
-        int i = TableSession.getSelectedRow();
-        TableModel model = TableSession.getModel();
-        //	lecture	 tag	noOFStudents	groupID	subjectCode	duration
-        //issue tag GroupID
-        //id.setText(model.getValueAt(i,6).toString());
-        String Lec = model.getValueAt(i,1).toString();
-        jLecture.setSelectedItem(Lec);
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        String tags = model.getValueAt(i,2).toString();
-        jTag.setSelectedItem(tags);
-
-        jNoStud.setText(model.getValueAt(i,3).toString());
-
-        String groupID = model.getValueAt(i,4).toString();
-        jGroup.setSelectedItem(groupID);
-
-        String subjectCode = model.getValueAt(i,5).toString();
-        jSubject.setSelectedItem(subjectCode);
-
-        jDura.setText(model.getValueAt(i,6).toString());
-    }//GEN-LAST:event_TableSessionMouseClicked
-
-    private void jNoStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNoStudActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jNoStudActionPerformed
-
-    private void jTagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTagActionPerformed
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
-            String sql = "select * from student";
+            int row = TableSession.getSelectedRow();
+            String value = (TableSession.getModel().getValueAt(row, 0).toString());
+            String query = "DELETE FROM session WHERE id="+value;
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.executeUpdate();
 
-            PreparedStatement pst = conn.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-            jGroup.removeAllItems();
-            while(rs.next()){
-                if(jTag.getSelectedItem().equals("Lec") || jTag.getSelectedItem().equals("Tute")){
+            DefaultTableModel model = (DefaultTableModel)TableSession.getModel();
+            model.setRowCount(0);
+            displaytable();
 
-                    jGroup.addItem(rs.getString("GroupID"));
-
-                }else if(jTag.getSelectedItem().equals("Lab")){
-
-                    jGroup.addItem(rs.getString("SubGroupID"));
-
-                }else{
-                    jGroup.setSelectedIndex(-1);
-                }
-            }
+            JOptionPane.showMessageDialog(this, "Session deleted");
+            conn.close();
 
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
         }
-    }//GEN-LAST:event_jTagActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-         setVisible(false);
-        new sessions().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-    private void subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectActionPerformed
-                setVisible(false);
-        new subject().setVisible(true);     
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            //	lecture	 tag	noOFStudents	groupID	subjectCode	duration
+            String sql = "Update session set   lecture = ?, tag = ? , noOFStudents = ?, groupID = ?, subjectCode = ? , durationHrs = ?  where id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, jLecture.getSelectedItem().toString());
+            pstmt.setString(2, jTag.getSelectedItem().toString());
+            pstmt.setString(3, jNoStud.getText());
+            pstmt.setString(4, jGroup.getSelectedItem().toString());
+            pstmt.setString(5, jSubject.getSelectedItem().toString());
+            pstmt.setString(6, jDura.getText());
 
-    }//GEN-LAST:event_subjectActionPerformed
+            int row = TableSession.getSelectedRow();
+            String id = (TableSession.getModel().getValueAt(row, 0).toString());
+            pstmt.setString(7, id);
 
-    private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
-       setVisible(false);
-        new lecture().setVisible(true);     
-    }//GEN-LAST:event_lectureActionPerformed
+            //to disable for editing  the TagID field
+
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Session updated succussfully");
+
+            DefaultTableModel model = (DefaultTableModel)TableSession.getModel();
+            model.setRowCount(0);
+            displaytable();
+
+            jLecture.setSelectedIndex(0);
+            jTag.setSelectedIndex(0);
+            jNoStud.setText("");
+            jGroup.setSelectedIndex(0);
+            jSubject.setSelectedIndex(0);
+            jDura.setText("");
+
+            conn.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        //refresh table after insert data
+        DefaultTableModel model = (DefaultTableModel)TableSession.getModel();
+        model.setRowCount(0);
+        displaytable();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jLecture.setSelectedIndex(0);
+        jTag.setSelectedIndex(0);
+        jNoStud.setText("");
+        jGroup.setSelectedIndex(0);
+        jSubject.setSelectedIndex(0);
+        jDura.setText("");
+        id.setText("");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -861,18 +904,23 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JButton WDH;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel contnt;
+    private javax.swing.JPanel contnt1;
+    private javax.swing.JPanel contnt2;
+    private javax.swing.JPanel contnt3;
+    private javax.swing.JPanel contnt4;
+    private javax.swing.JPanel contnt5;
     private javax.swing.JButton generate;
     private javax.swing.JPanel heading;
     private javax.swing.JLabel id;
+    private javax.swing.JLabel id1;
+    private javax.swing.JLabel id2;
+    private javax.swing.JLabel id3;
+    private javax.swing.JLabel id4;
+    private javax.swing.JLabel id5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JTextField jDura;
     private javax.swing.JComboBox<String> jGroup;
     private javax.swing.JLabel jLabel1;
@@ -888,6 +936,7 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JTextField jNoStud;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> jSubject;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> jTag;
     private javax.swing.JButton lecture;
     private javax.swing.JButton location;
