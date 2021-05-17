@@ -299,11 +299,11 @@ public class workingDaysHours extends javax.swing.JFrame {
         contnt.setLayout(contntLayout);
         contntLayout.setHorizontalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(contntLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(contntLayout.createSequentialGroup()
+                        .addGap(71, 71, 71)
                         .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(contntLayout.createSequentialGroup()
                                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,9 +340,11 @@ public class workingDaysHours extends javax.swing.JFrame {
                                 .addGap(10, 10, 10)
                                 .addComponent(chk_wednesday)
                                 .addGap(18, 18, 18)
-                                .addComponent(chk_thursday)))))
+                                .addComponent(chk_thursday))))
+                    .addGroup(contntLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contntLayout.setVerticalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,7 +615,7 @@ public class workingDaysHours extends javax.swing.JFrame {
             chk_sunday.setSelected(false);
             
             
-           // jSpinner_W_time.getSelectedIndex();
+           //jSpinner_W_time.getSelectedIndex();
             
             
         } catch (ClassNotFoundException ex) {
