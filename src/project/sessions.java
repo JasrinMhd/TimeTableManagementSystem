@@ -964,6 +964,9 @@ public class sessions extends javax.swing.JFrame {
         id.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    
+    
+    
     private void addPreferedSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPreferedSessionActionPerformed
 
         String sRoom = chkBoxRoom.getSelectedItem().toString();
@@ -1004,12 +1007,12 @@ public class sessions extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
-            String sql = "select * from session";
+            String sql = "select * from location";
             
             PreparedStatement pst = conn.prepareStatement(sql);
             java.sql.ResultSet rs = pst.executeQuery();
              while(rs.next()){
-                 chkBoxRoom.addItem(rs.getString("subjectCode"));
+                 chkBoxRoom.addItem(rs.getString("room"));
              }
            
             
@@ -1020,6 +1023,12 @@ public class sessions extends javax.swing.JFrame {
         }
     }
     
+     
+     
+     
+     
+     
+     
     /**
      * @param args the command line arguments
      */

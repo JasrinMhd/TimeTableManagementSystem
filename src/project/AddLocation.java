@@ -33,6 +33,7 @@ public class AddLocation extends javax.swing.JFrame {
     public AddLocation() {
         initComponents();
         DisplayLocation();
+        roomCombo();
     }
     
     private void DisplayLocation(){
@@ -110,6 +111,17 @@ public class AddLocation extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        chkBoxRoom = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        chkBoxDay = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        txt_sTime = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txt_eTime = new javax.swing.JTextField();
+        addLocN_A_T = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -405,15 +417,115 @@ public class AddLocation extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consecutive", jPanel3);
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setText("Select Room");
+
+        chkBoxRoom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel11.setText("Select Day");
+        jLabel11.setPreferredSize(new java.awt.Dimension(59, 14));
+
+        chkBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Monday", "Tuesday", "Wednesday", "THursday", "Friday", "Saturday", "Sunday" }));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setText("Start time");
+        jLabel12.setPreferredSize(new java.awt.Dimension(59, 14));
+
+        txt_sTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_sTimeActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setText("End time");
+        jLabel13.setPreferredSize(new java.awt.Dimension(59, 14));
+
+        txt_eTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_eTimeActionPerformed(evt);
+            }
+        });
+
+        addLocN_A_T.setText("Add");
+        addLocN_A_T.setPreferredSize(new java.awt.Dimension(80, 33));
+        addLocN_A_T.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addLocN_A_TActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("clear");
+        jButton3.setPreferredSize(new java.awt.Dimension(80, 33));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(102, 51, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Not Available Time Locations");
+        jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 831, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(chkBoxRoom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chkBoxDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(addLocN_A_T, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(214, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel14)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkBoxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkBoxDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addLocN_A_T, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(85, 85, 85))
         );
 
         jTabbedPane1.addTab("Not available time", jPanel4);
@@ -737,6 +849,68 @@ public class AddLocation extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txt_sTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_sTimeActionPerformed
+
+    private void txt_eTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_eTimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_eTimeActionPerformed
+
+    private void addLocN_A_TActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLocN_A_TActionPerformed
+        String sRoom = chkBoxRoom.getSelectedItem().toString();
+        String sDay = chkBoxDay.getSelectedItem().toString();
+        String sTime = txt_sTime.getText();
+        String eTime = txt_eTime.getText();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            pst = con.prepareStatement("insert into addnotavailabletimelocations(selectRoom, selectDay, startTime, endTime)values(?,?,?,?)");
+
+            pst.setString(1, sRoom);
+            pst.setString(2, sDay);
+            pst.setString(3, sTime);
+            pst.setString(4, eTime);
+
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(this, "Successfully added!!!");
+
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        
+        }
+    }//GEN-LAST:event_addLocN_A_TActionPerformed
+
+    private void roomCombo(){
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from location";
+            
+            PreparedStatement pst = conn.prepareStatement(sql);
+            java.sql.ResultSet rs = pst.executeQuery();
+             while(rs.next()){
+                 chkBoxRoom.addItem(rs.getString("room"));
+             }
+           
+            
+         
+            
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        chkBoxRoom.setSelectedIndex(0);
+        chkBoxDay.setSelectedIndex(0);
+        txt_sTime.setText("");
+        txt_eTime.setText("");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**4
      * @param args the command line arguments
      */
@@ -780,15 +954,24 @@ public class AddLocation extends javax.swing.JFrame {
     private javax.swing.JTextField ID;
     private javax.swing.JButton SaveBtn;
     private javax.swing.JButton WDH;
+    private javax.swing.JButton addLocN_A_T;
     private javax.swing.JPanel bg;
     private javax.swing.JTextField building;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cap;
+    private javax.swing.JComboBox<String> chkBoxDay;
+    private javax.swing.JComboBox<String> chkBoxRoom;
     private javax.swing.JPanel contnt;
     private javax.swing.JButton generate;
     private javax.swing.JPanel heading;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -817,5 +1000,7 @@ public class AddLocation extends javax.swing.JFrame {
     private javax.swing.JButton student;
     private javax.swing.JButton subject;
     private javax.swing.JButton tag;
+    private javax.swing.JTextField txt_eTime;
+    private javax.swing.JTextField txt_sTime;
     // End of variables declaration//GEN-END:variables
 }
