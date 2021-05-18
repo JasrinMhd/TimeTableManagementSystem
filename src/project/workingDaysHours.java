@@ -259,6 +259,8 @@ public class workingDaysHours extends javax.swing.JFrame {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -287,7 +289,7 @@ public class workingDaysHours extends javax.swing.JFrame {
 
         chk_sunday.setText("Sunday");
 
-        jSpinner_W_time.setModel(new javax.swing.SpinnerNumberModel(1, 1, 24, 1));
+        jSpinner_W_time.setModel(new javax.swing.SpinnerNumberModel(0, 0, 24, 1));
         jSpinner_W_time.setDoubleBuffered(true);
         jSpinner_W_time.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -387,8 +389,8 @@ public class workingDaysHours extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(deleteWDH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -496,28 +498,40 @@ public class workingDaysHours extends javax.swing.JFrame {
              String No_wdys = cBoxNo_WD.getSelectedItem().toString();
              int W_hrs = Integer.valueOf(jSpinner_W_time.getValue().toString()); 
              
-             String w_days = "";
+             
+        int counter=0;
+        String w_days = "";
         if(chk_monday.isSelected()){
             w_days += chk_monday.getText()+" ";
+            counter++;
         }
         if(chk_tuesday.isSelected()){
             w_days += chk_tuesday.getText()+" ";
+            counter++;
         }
         if(chk_wednesday.isSelected()){
             w_days += chk_wednesday.getText()+" ";
+            counter++;
         }
         if(chk_thursday.isSelected()){
             w_days += chk_thursday.getText()+" ";
+            counter++;
         }
         if(chk_friday.isSelected()){
             w_days += chk_friday.getText()+" ";
+            counter++;
         }
         if(chk_saturday.isSelected()){
             w_days += chk_saturday.getText()+" ";
+            counter++;
         }
         if(chk_sunday.isSelected()){
             w_days += chk_sunday.getText()+" ";
+            counter++;
         }
+        
+        int nwd = Integer.parseInt(cBoxNo_WD.getSelectedItem().toString());
+        if(counter==nwd){
              
              
              
@@ -547,8 +561,13 @@ public class workingDaysHours extends javax.swing.JFrame {
             chk_saturday.setSelected(false);
             chk_sunday.setSelected(false);
             
+            jSpinner_W_time.setValue(0);
             
-            //jSpinner_W_time.setText("");
+            
+             }else{
+            JOptionPane.showMessageDialog(null,"Error miss match" );
+        
+        }
             
             
         } catch (ClassNotFoundException ex) {
@@ -567,28 +586,40 @@ public class workingDaysHours extends javax.swing.JFrame {
         String No_wdys = cBoxNo_WD.getSelectedItem().toString();
         int W_hrs = Integer.valueOf(jSpinner_W_time.getValue().toString());
         
+        
+        int counter=0;
         String w_days = "";
         if(chk_monday.isSelected()){
             w_days += chk_monday.getText()+" ";
+            counter++;
         }
         if(chk_tuesday.isSelected()){
             w_days += chk_tuesday.getText()+" ";
+            counter++;
         }
         if(chk_wednesday.isSelected()){
             w_days += chk_wednesday.getText()+" ";
+            counter++;
         }
         if(chk_thursday.isSelected()){
             w_days += chk_thursday.getText()+" ";
+            counter++;
         }
         if(chk_friday.isSelected()){
             w_days += chk_friday.getText()+" ";
+            counter++;
         }
         if(chk_saturday.isSelected()){
             w_days += chk_saturday.getText()+" ";
+            counter++;
         }
         if(chk_sunday.isSelected()){
             w_days += chk_sunday.getText()+" ";
+            counter++;
         }
+        
+        int nwd = Integer.parseInt(cBoxNo_WD.getSelectedItem().toString());
+        if(counter==nwd){
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -596,16 +627,21 @@ public class workingDaysHours extends javax.swing.JFrame {
             
             insert = con1.prepareStatement("insert into workingdayshours(num_Wdays, w_days, w_hours)values(?,?,?)");
             
+
+            
             insert.setString(1, No_wdys);
             insert.setString(2, w_days);
             insert.setInt(3, W_hrs);
             insert.executeUpdate();
             
-            JOptionPane.showMessageDialog(this, "Successfully added!!!");
+            
+           
+            
+            JOptionPane.showMessageDialog(null, "Successfully added");
+        
             table_update();
             
             cBoxNo_WD.setSelectedIndex(0);
-            
             chk_monday.setSelected(false);
             chk_tuesday.setSelected(false);
             chk_wednesday.setSelected(false);
@@ -613,10 +649,9 @@ public class workingDaysHours extends javax.swing.JFrame {
             chk_friday.setSelected(false);
             chk_saturday.setSelected(false);
             chk_sunday.setSelected(false);
+           jSpinner_W_time.setValue(0);
             
-            
-           //jSpinner_W_time.getSelectedIndex();
-            
+        
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(workingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
@@ -624,12 +659,15 @@ public class workingDaysHours extends javax.swing.JFrame {
             Logger.getLogger(workingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-
+        }else{
+            JOptionPane.showMessageDialog(null,"Error miss match" );
+        
+        }
         
     }//GEN-LAST:event_addWDHActionPerformed
 
     private void deleteWDHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteWDHActionPerformed
-        // TODO add your handling code here:
+        
         
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         int i = jTable1.getSelectedRow();
@@ -666,8 +704,8 @@ public class workingDaysHours extends javax.swing.JFrame {
             chk_saturday.setSelected(false);
             chk_sunday.setSelected(false);
             
-            
-            //jSpinner_W_time.setText("");     
+            jSpinner_W_time.setValue(0);
+                 
                  
             
              }
@@ -683,39 +721,136 @@ public class workingDaysHours extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
 
-         
+        // try { 
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         int i = jTable1.getSelectedRow();
+  
+//        String w_days = model.getValueAt(i, 2).toString();
+//                boolean Mon=w_days.contains("Monday");
+//                boolean Tue=w_days.contains("Tuesday");
+//                boolean Wed=w_days.contains("Wednesday");
+//                boolean Thu=w_days.contains("Thursday");
+//                boolean Fri=w_days.contains("Friday");
+//                boolean Sat=w_days.contains("Saturday");
+//                boolean Sun=w_days.contains("Sunday");
+//                if(Mon){
+//                    chk_monday.setSelected(true);
+//                }
+//                if(Tue){
+//                    chk_tuesday.setSelected(true);
+//                }
+//                if(Wed){
+//                    chk_wednesday.setSelected(true);
+//                }
+//                if(Thu){
+//                    chk_thursday.setSelected(true);
+//                }
+//                if(Fri){
+//                    chk_friday.setSelected(true);
+//                }
+//                if(Sat){
+//                    chk_saturday.setSelected(true);
+//                }
+//                if(Sun){
+//                    chk_sunday.setSelected(true);
+//                }
+        
+        
+        
+        String cBoxNo_WDy = model.getValueAt(i,1).toString();
+        cBoxNo_WD.setSelectedItem(cBoxNo_WDy);
          
-         String cBoxNo_WDy = model .getValueAt(i, 1).toString();
-            switch(cBoxNo_WDy){
-                case "1":
-                    cBoxNo_WD.setSelectedIndex(1);
-                    break;
-                case "2":
-                    cBoxNo_WD.setSelectedIndex(2);
-                    break;
-                case "3":
-                    cBoxNo_WD.setSelectedIndex(3);
-                    break;
-                case "4":
-                    cBoxNo_WD.setSelectedIndex(4);
-                    break;
-                case "5":
-                    cBoxNo_WD.setSelectedIndex(5);
-                    break;    
-                case "6":
-                    cBoxNo_WD.setSelectedIndex(6);
-                    break;
-                case "7":
-                    cBoxNo_WD.setSelectedIndex(7);
-                    break;    
-                    
-            }
-            
-            
-            
+
+          
+          
            String w_days = model.getValueAt(i, 2).toString();
+           if(w_days.equals("Monday Tuesday Wednesday Thursday ")){
+               chk_monday.setSelected(true);
+               chk_tuesday.setSelected(true);
+               chk_wednesday.setSelected(true);
+               chk_thursday.setSelected(true);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           if(w_days.equals("Monday Wednesday Thursday ")){
+               chk_monday.setSelected(true);
+               chk_wednesday.setSelected(true);
+               chk_thursday.setSelected(true); 
+               chk_tuesday.setSelected(false);
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           if(w_days.equals("Tuesday ")){
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(true);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           if(w_days.equals("Wednesday ")){
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(false);
+               chk_wednesday.setSelected(true);
+               chk_thursday.setSelected(false);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           if(w_days.equals("Thursday ")){
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(false);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(true);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           if(w_days.equals("Friday ")){
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(false);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);  
+               chk_friday.setSelected(true);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           
+           if(w_days.equals("Saturday ")){
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(false);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+                    
+           }
+           if(w_days.equals("Sunday ")){
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(false);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(true);
+                    
+           }
+           
+           
+           
+           
+           
+           
            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday ")){
                chk_monday.setSelected(true);
                chk_tuesday.setSelected(true);
@@ -726,6 +861,27 @@ public class workingDaysHours extends javax.swing.JFrame {
                chk_sunday.setSelected(false);
                     
            }
+            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday ")){
+               chk_monday.setSelected(true);
+               chk_tuesday.setSelected(true);
+               chk_wednesday.setSelected(true);
+               chk_thursday.setSelected(true);  
+               chk_friday.setSelected(true);
+               chk_saturday.setSelected(true);
+               chk_sunday.setSelected(false);
+                    
+           }
+            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday Sunday ")){
+               chk_monday.setSelected(true);
+               chk_tuesday.setSelected(true);
+               chk_wednesday.setSelected(true);
+               chk_thursday.setSelected(true);  
+               chk_friday.setSelected(true);
+               chk_saturday.setSelected(true);
+               chk_sunday.setSelected(true);
+                    
+           }
+            
            if(w_days.equals("Monday Tuesday ")){
                chk_monday.setSelected(true);
                chk_tuesday.setSelected(true); 
@@ -744,6 +900,35 @@ public class workingDaysHours extends javax.swing.JFrame {
                chk_saturday.setSelected(false);
                chk_sunday.setSelected(false);
            }
+            if(w_days.equals("Monday Tuesday Saturday Sunday ")){
+                chk_monday.setSelected(true);
+               chk_tuesday.setSelected(true);
+               chk_saturday.setSelected(true);
+               chk_sunday.setSelected(true);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);
+               chk_friday.setSelected(false);
+           }
+            if(w_days.equals("Monday Tuesday Friday Saturday Sunday ")){
+                chk_monday.setSelected(true);
+               chk_tuesday.setSelected(true);
+               chk_saturday.setSelected(true);
+               chk_sunday.setSelected(true);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);
+               chk_friday.setSelected(true);
+           }
+             if(w_days.equals("Monday Tuesday Thursday Friday ")){
+               chk_monday.setSelected(true);
+               chk_tuesday.setSelected(true);
+               chk_friday.setSelected(true);
+               chk_thursday.setSelected(true);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+               chk_wednesday.setSelected(false);
+               
+           }
+           
            if(w_days.equals("Saturday Sunday ")){
                chk_saturday.setSelected(true);
                chk_sunday.setSelected(true);
@@ -759,7 +944,10 @@ public class workingDaysHours extends javax.swing.JFrame {
 
 
 
-
+// } catch (Exception e) {
+//             e.printStackTrace();
+//             
+//        }
 
 
 
