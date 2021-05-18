@@ -426,7 +426,7 @@ public class AddLocation extends javax.swing.JFrame {
         jLabel11.setText("Select Day");
         jLabel11.setPreferredSize(new java.awt.Dimension(59, 14));
 
-        chkBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Monday", "Tuesday", "Wednesday", "THursday", "Friday", "Saturday", "Sunday" }));
+        chkBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setText("Start time");
@@ -575,7 +575,7 @@ public class AddLocation extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(contnt, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(contnt, javax.swing.GroupLayout.PREFERRED_SIZE, 833, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
@@ -587,7 +587,7 @@ public class AddLocation extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(contnt, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(contnt, javax.swing.GroupLayout.PREFERRED_SIZE, 491, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -860,8 +860,8 @@ public class AddLocation extends javax.swing.JFrame {
     private void addLocN_A_TActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLocN_A_TActionPerformed
         String sRoom = chkBoxRoom.getSelectedItem().toString();
         String sDay = chkBoxDay.getSelectedItem().toString();
-        String sTime = txt_sTime.getText();
-        String eTime = txt_eTime.getText();
+       // String sTime = txt_sTime.getText();
+       // String eTime = txt_eTime.getText();
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
@@ -870,8 +870,22 @@ public class AddLocation extends javax.swing.JFrame {
 
             pst.setString(1, sRoom);
             pst.setString(2, sDay);
-            pst.setString(3, sTime);
-            pst.setString(4, eTime);
+            
+            try{
+                pst.setInt(3, Integer.parseInt(txt_sTime.getText()));
+
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid time");
+            }
+            
+            try{
+                pst.setInt(4, Integer.parseInt(txt_eTime.getText()));
+
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid time");
+            }
+           // pst.setString(3, sTime);
+            //pst.setString(4, eTime);
 
             pst.executeUpdate();
 
