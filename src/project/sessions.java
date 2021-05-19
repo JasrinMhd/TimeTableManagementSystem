@@ -26,9 +26,6 @@ import java.text.DateFormat;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.TableModel;
 
 import net.proteanit.sql.DbUtils;
@@ -47,26 +44,16 @@ public class sessions extends javax.swing.JFrame {
     Connection sqlConn = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    
-    
     /**
      * Creates new form NewJFrame
-     */ 
+     */
     public sessions() {
         initComponents();
         displaytable();
         lecCombobox();
         tagCombobox();
         subCombobox();
-        
-        roomCombo();
-        
-        groupCombo();
-        sessionID_Combo();
-        sub_groupCombo();
-        lectureCombo();
-                
-        table_update();
+      
     }
 
     /**
@@ -117,6 +104,8 @@ public class sessions extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         id = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLecture2 = new javax.swing.JComboBox<>();
         contnt1 = new javax.swing.JPanel();
         id1 = new javax.swing.JLabel();
         contnt2 = new javax.swing.JPanel();
@@ -125,39 +114,8 @@ public class sessions extends javax.swing.JFrame {
         id3 = new javax.swing.JLabel();
         contnt4 = new javax.swing.JPanel();
         id4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        chkBoxRoom = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        chkBoxDay = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        txt_sTime = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        txt_eTime = new javax.swing.JTextField();
-        addPreferedSession = new javax.swing.JButton();
-        clearBtn = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
         contnt5 = new javax.swing.JPanel();
         id5 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        chkBoxlec = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        chkBoxGrp = new javax.swing.JComboBox<>();
-        jLabel17 = new javax.swing.JLabel();
-        chkBoxSubGrp = new javax.swing.JComboBox<>();
-        jLabel18 = new javax.swing.JLabel();
-        chkBox_sDay = new javax.swing.JComboBox<>();
-        jLabel19 = new javax.swing.JLabel();
-        chkBox_sessionID = new javax.swing.JComboBox<>();
-        jLabel20 = new javax.swing.JLabel();
-        txt_sTime1 = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        txt_eTime1 = new javax.swing.JTextField();
-        btnAddNot_A_T_Session = new javax.swing.JButton();
-        clearBtnNot_aT = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        TableN_A_T = new javax.swing.JTable();
-        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -250,8 +208,9 @@ public class sessions extends javax.swing.JFrame {
                 .addComponent(stat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(generate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(logout))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addContainerGap())
         );
 
         heading.setBackground(new java.awt.Color(153, 153, 255));
@@ -298,8 +257,6 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel2.setText("Select Lecture");
 
-        jLecture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
         jLabel3.setText("Subject code");
 
         jLabel4.setText("Tag");
@@ -310,16 +267,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel7.setText("Duration ");
 
-        jSubject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
-        jTag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         jTag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTagActionPerformed(evt);
             }
         });
-
-        jGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
         jNoStud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,13 +283,13 @@ public class sessions extends javax.swing.JFrame {
 
         TableSession.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Lecture", "Tag", "Subject Code", "No. Of Students", "Duration", "Group ID"
+                "ID", "Lecture", "Lecture 2", "Tag", "Subject Code", "No. Of Students", "Duration", "Group ID"
             }
         ));
         TableSession.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -382,25 +334,18 @@ public class sessions extends javax.swing.JFrame {
         jLabel10.setText("SESSIONS MANAGEMENT");
         jLabel10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
 
+        jLabel9.setText("Select Assistant Lecture");
+
+        jLecture2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+
         javax.swing.GroupLayout contntLayout = new javax.swing.GroupLayout(contnt);
         contnt.setLayout(contntLayout);
         contntLayout.setHorizontalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contntLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contntLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(119, 119, 119)
-                        .addComponent(jButton3)
-                        .addGap(158, 158, 158)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(81, 81, 81))
-                    .addGroup(contntLayout.createSequentialGroup()
-                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 646, Short.MAX_VALUE))))
+                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
             .addGroup(contntLayout.createSequentialGroup()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
@@ -408,34 +353,50 @@ public class sessions extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(contntLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(30, 30, 30)
+                .addGap(35, 35, 35)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel7))
+                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel9))
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(25, 25, 25)))
-                .addGap(21, 21, 21)
+                        .addComponent(jButton1)
+                        .addGap(50, 50, 50)))
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7))
+                            .addGroup(contntLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(25, 25, 25)))
+                        .addGap(21, 21, 21)
+                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(contntLayout.createSequentialGroup()
+                                .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel8)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(contntLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jButton3)
+                        .addGap(159, 159, 159)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(37, 37, 37))))
         );
         contntLayout.setVerticalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,26 +411,30 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel7)
                     .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton2))
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -482,14 +447,14 @@ public class sessions extends javax.swing.JFrame {
             .addGroup(contnt1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(id1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 646, Short.MAX_VALUE))
+                .addGap(0, 605, Short.MAX_VALUE))
         );
         contnt1Layout.setVerticalGroup(
             contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt1Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(id1)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consecutive Sessions", contnt1);
@@ -501,14 +466,14 @@ public class sessions extends javax.swing.JFrame {
             .addGroup(contnt2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 646, Short.MAX_VALUE))
+                .addGap(0, 605, Short.MAX_VALUE))
         );
         contnt2Layout.setVerticalGroup(
             contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt2Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(id2)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Non Overlapping Sessions", contnt2);
@@ -520,52 +485,17 @@ public class sessions extends javax.swing.JFrame {
             .addGroup(contnt3Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(id3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 646, Short.MAX_VALUE))
+                .addGap(0, 605, Short.MAX_VALUE))
         );
         contnt3Layout.setVerticalGroup(
             contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt3Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(id3)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(" Parallel Sessions", contnt3);
-
-        jLabel9.setText("Select Room");
-
-        chkBoxRoom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
-        jLabel11.setText("Select Day");
-
-        chkBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Monday", "Tuesday", "Wednesday", "THursday", "Friday", "Saturday", "Sunday" }));
-
-        jLabel12.setText("Start Time");
-
-        jLabel13.setText("End Time");
-
-        addPreferedSession.setText("Add Session");
-        addPreferedSession.setPreferredSize(new java.awt.Dimension(80, 33));
-        addPreferedSession.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPreferedSessionActionPerformed(evt);
-            }
-        });
-
-        clearBtn.setText("Clear");
-        clearBtn.setPreferredSize(new java.awt.Dimension(80, 33));
-        clearBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 51, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Add Preferred Sessions");
-        jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
 
         javax.swing.GroupLayout contnt4Layout = new javax.swing.GroupLayout(contnt4);
         contnt4.setLayout(contnt4Layout);
@@ -574,140 +504,17 @@ public class sessions extends javax.swing.JFrame {
             .addGroup(contnt4Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(id4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 646, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt4Layout.createSequentialGroup()
-                        .addComponent(addPreferedSession, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt4Layout.createSequentialGroup()
-                        .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel12))
-                        .addGap(45, 45, 45)
-                        .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_sTime)
-                            .addComponent(chkBoxDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(chkBoxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(127, 127, 127))
+                .addGap(0, 605, Short.MAX_VALUE))
         );
         contnt4Layout.setVerticalGroup(
             contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt4Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(68, 68, 68)
                 .addComponent(id4)
-                .addGap(62, 62, 62)
-                .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(chkBoxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(chkBoxDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contnt4Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13)
-                            .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addPreferedSession, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(24, 24, 24))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Preferred Session", contnt4);
-
-        jLabel15.setText("Select Lecturer");
-
-        chkBoxlec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
-        jLabel16.setText("Select Group");
-
-        chkBoxGrp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
-        jLabel17.setText("Select Sub Group");
-
-        chkBoxSubGrp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
-        jLabel18.setText("Select Day");
-
-        chkBox_sDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
-
-        jLabel19.setText("Select Session ID");
-
-        chkBox_sessionID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-
-        jLabel20.setText("Start Time");
-
-        jLabel21.setText("End Time");
-
-        btnAddNot_A_T_Session.setText("Submit");
-        btnAddNot_A_T_Session.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddNot_A_T_SessionActionPerformed(evt);
-            }
-        });
-
-        clearBtnNot_aT.setText("Clear");
-        clearBtnNot_aT.setPreferredSize(new java.awt.Dimension(80, 33));
-        clearBtnNot_aT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearBtnNot_aTActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Delete");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        TableN_A_T.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id", "Lecturer", "Student Group", "Sudent Subgroup", "Day", "Session ID", "Start Time", "End Time"
-            }
-        ));
-        TableN_A_T.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableN_A_TMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(TableN_A_T);
-
-        jLabel22.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel22.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(102, 51, 255));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Not Available Time For Sessions");
-        jLabel22.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
 
         javax.swing.GroupLayout contnt5Layout = new javax.swing.GroupLayout(contnt5);
         contnt5.setLayout(contnt5Layout);
@@ -715,102 +522,15 @@ public class sessions extends javax.swing.JFrame {
             contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt5Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contnt5Layout.createSequentialGroup()
-                        .addComponent(id5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 646, Short.MAX_VALUE))
-                    .addGroup(contnt5Layout.createSequentialGroup()
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(contnt5Layout.createSequentialGroup()
-                                .addComponent(btnAddNot_A_T_Session, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(clearBtnNot_aT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contnt5Layout.createSequentialGroup()
-                                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18))
-                                .addGap(18, 18, 18)
-                                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(chkBox_sDay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(chkBoxSubGrp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(chkBoxGrp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(chkBoxlec, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contnt5Layout.createSequentialGroup()
-                                .addGap(169, 169, 169)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(contnt5Layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel21))
-                                .addGap(18, 18, 18)
-                                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txt_sTime1)
-                                    .addComponent(txt_eTime1)
-                                    .addComponent(chkBox_sessionID, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(contnt5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(contnt5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(id5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 605, Short.MAX_VALUE))
         );
         contnt5Layout.setVerticalGroup(
             contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt5Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(68, 68, 68)
                 .addComponent(id5)
-                .addGap(31, 31, 31)
-                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contnt5Layout.createSequentialGroup()
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(chkBoxlec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chkBoxGrp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chkBoxSubGrp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)))
-                    .addGroup(contnt5Layout.createSequentialGroup()
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chkBox_sessionID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_sTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21)
-                            .addComponent(txt_eTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkBox_sDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contnt5Layout.createSequentialGroup()
-                        .addGap(0, 77, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(contnt5Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(clearBtnNot_aT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddNot_A_T_Session, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Not Available Time", contnt5);
@@ -826,7 +546,9 @@ public class sessions extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 714, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -836,10 +558,8 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(nb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(nb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -966,14 +686,27 @@ public class sessions extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
             String sql = "select * from student";
+             String sql2 = "select * from lecture";
 
             PreparedStatement pst = conn.prepareStatement(sql);
+            PreparedStatement pst2 = conn.prepareStatement(sql2);
+             
             ResultSet rs = pst.executeQuery();
+            ResultSet rs2 = pst2.executeQuery();
+            
             jGroup.removeAllItems();
-            while(rs.next()){
+            while(rs.next() & rs2.next()){
                 if(jTag.getSelectedItem().equals("Lec") || jTag.getSelectedItem().equals("Tute")){
 
                     jGroup.addItem(rs.getString("GroupID"));
+                    ///////////////
+                   // while(rs2.next()){
+                 jLecture2.addItem(rs2.getString("Name"));
+            // }
+                    
+                    
+                    
+                    /////////////
 
                 }else if(jTag.getSelectedItem().equals("Lab")){
 
@@ -1001,19 +734,22 @@ public class sessions extends javax.swing.JFrame {
         //id.setText(model.getValueAt(i,6).toString());
         String Lec = model.getValueAt(i,1).toString();
         jLecture.setSelectedItem(Lec);
+        
+        String Lec2 = model.getValueAt(i,2).toString();
+        jLecture2.setSelectedItem(Lec2);
 
-        String tags = model.getValueAt(i,2).toString();
+        String tags = model.getValueAt(i,3).toString();
         jTag.setSelectedItem(tags);
 
-        jNoStud.setText(model.getValueAt(i,3).toString());
+        jNoStud.setText(model.getValueAt(i,4).toString());
 
-        String groupID = model.getValueAt(i,4).toString();
+        String groupID = model.getValueAt(i,5).toString();
         jGroup.setSelectedItem(groupID);
 
-        String subjectCode = model.getValueAt(i,5).toString();
+        String subjectCode = model.getValueAt(i,6).toString();
         jSubject.setSelectedItem(subjectCode);
 
-        jDura.setText(model.getValueAt(i,6).toString());
+        jDura.setText(model.getValueAt(i,7).toString());
     }//GEN-LAST:event_TableSessionMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1021,20 +757,24 @@ public class sessions extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
-            String sql = "insert into session values (null, ?, ?, ?, ?, ?, ?)";
+            String sql = "insert into session values (null, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             //	lecture	 tag	noOFStudents	groupID	subjectCode	duration
 
             String lec;
             lec = jLecture.getSelectedItem().toString();
             pst.setString(1, lec);
+            
+            String lec2;
+            lec2 = jLecture2.getSelectedItem().toString();
+            pst.setString(2, lec2);
 
             String tag;
             tag = jTag.getSelectedItem().toString();
-            pst.setString(2, tag);
+            pst.setString(3, tag);
 
             try{
-                pst.setInt(3, Integer.parseInt(jNoStud.getText()));
+                pst.setInt(4, Integer.parseInt(jNoStud.getText()));
 
             }catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid number for No OF Students");
@@ -1042,14 +782,14 @@ public class sessions extends javax.swing.JFrame {
 
             String groupID;
             groupID = jGroup.getSelectedItem().toString();
-            pst.setString(4, groupID);
+            pst.setString(5, groupID);
 
             String subjectCode;
             subjectCode = jSubject.getSelectedItem().toString();
-            pst.setString(5, subjectCode);
+            pst.setString(6, subjectCode);
 
             try{
-                pst.setInt(6, Integer.parseInt(jDura.getText()));
+                pst.setInt(7, Integer.parseInt(jDura.getText()));
 
             }catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid number for Duration");
@@ -1106,18 +846,19 @@ public class sessions extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             //	lecture	 tag	noOFStudents	groupID	subjectCode	duration
-            String sql = "Update session set   lecture = ?, tag = ? , noOFStudents = ?, groupID = ?, subjectCode = ? , durationHrs = ?  where id = ?";
+            String sql = "Update session set   lecture = ?, lecture2 = ?, tag = ? , noOFStudents = ?, groupID = ?, subjectCode = ? , durationHrs = ?  where id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, jLecture.getSelectedItem().toString());
-            pstmt.setString(2, jTag.getSelectedItem().toString());
-            pstmt.setString(3, jNoStud.getText());
-            pstmt.setString(4, jGroup.getSelectedItem().toString());
-            pstmt.setString(5, jSubject.getSelectedItem().toString());
-            pstmt.setString(6, jDura.getText());
+            pstmt.setString(2, jLecture2.getSelectedItem().toString());
+            pstmt.setString(3, jTag.getSelectedItem().toString());
+            pstmt.setString(4, jNoStud.getText());
+            pstmt.setString(5, jGroup.getSelectedItem().toString());
+            pstmt.setString(6, jSubject.getSelectedItem().toString());
+            pstmt.setString(7, jDura.getText());
 
             int row = TableSession.getSelectedRow();
             String id = (TableSession.getModel().getValueAt(row, 0).toString());
-            pstmt.setString(7, id);
+            pstmt.setString(8, id);
 
             //to disable for editing  the TagID field
 
@@ -1156,372 +897,6 @@ public class sessions extends javax.swing.JFrame {
         id.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    
-    
-    
-    private void addPreferedSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPreferedSessionActionPerformed
-
-        String sRoom = chkBoxRoom.getSelectedItem().toString();
-        String sDay = chkBoxDay.getSelectedItem().toString();
-       // String sTime = txt_sTime.getText();
-       // String eTime = txt_eTime.getText();
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-
-            pst = sqlConn.prepareStatement("insert into addPreferredSession(selectRoom, selectDay, startTime, endTime)values(?,?,?,?)");
-
-            pst.setString(1, sRoom);
-            pst.setString(2, sDay);
-            
-            try{
-                pst.setInt(3, Integer.parseInt(txt_sTime.getText()));
-
-            }catch(NumberFormatException e){
-                JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid time");
-            }
-            
-            try{
-                pst.setInt(4, Integer.parseInt(txt_eTime.getText()));
-
-            }catch(NumberFormatException e){
-                JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid time");
-            }
-            
-           // pst.setString(3, sTime);
-           // pst.setString(4, eTime);
-
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Successfully added!!!");
-
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        
-        }
-
-    }//GEN-LAST:event_addPreferedSessionActionPerformed
-
-    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        chkBoxRoom.setSelectedIndex(0);
-        chkBoxDay.setSelectedIndex(0);
-        txt_sTime.setText("");
-        txt_eTime.setText("");
-    }//GEN-LAST:event_clearBtnActionPerformed
-
-    
-    
-    private void table_update()
-    {
-        int c;
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            pst = sqlConn.prepareStatement("select * from addnotavailabletimesession");
-            java.sql.ResultSet rs = pst.executeQuery();
-            ResultSetMetaData Rss = rs.getMetaData();
-            c = Rss.getColumnCount();
-            
-            DefaultTableModel model = (DefaultTableModel)TableN_A_T.getModel();
-            
-            model.setRowCount(0);
-            
-            while(rs.next())
-            {
-                Vector v2 = new Vector(); 
-                
-                for(int a=1; a<=c; a++)
-                {
-                    v2.add(rs.getString("id"));
-                    v2.add(rs.getString("sLecturer"));
-                    v2.add(rs.getString("sGroup"));
-                    v2.add(rs.getString("sSub_Group"));
-                    v2.add(rs.getString("sDay"));
-                    v2.add(rs.getString("sSessionID"));
-                    v2.add(rs.getString("startTime"));
-                    v2.add(rs.getString("endTime"));
-                }
-                
-                model.addRow(v2);
-                
-            }
-            
-            
-            
-            
-            
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(workingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(workingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-   
-    private void btnAddNot_A_T_SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNot_A_T_SessionActionPerformed
-        String sLecturer = chkBoxlec.getSelectedItem().toString();
-        String sGroup = chkBoxGrp.getSelectedItem().toString();
-        String sSubgroup = chkBoxSubGrp.getSelectedItem().toString();
-        String sDay = chkBox_sDay.getSelectedItem().toString();
-        String s_sessionID = chkBox_sessionID.getSelectedItem().toString();
-        //String sTime = txt_sTime1.getText();
-        //String eTime = txt_eTime1.getText();
-        
-
-        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            pst = sqlConn.prepareStatement("insert into addnotavailabletimesession(sLecturer, sGroup, sSub_Group, sDay, sSessionID, startTime, endTime)values(?,?,?,?,?,?,?)");
-            
-            pst.setString(1, sLecturer);
-            pst.setString(2, sGroup);
-            pst.setString(3, sSubgroup);
-            pst.setString(4, sDay);
-            pst.setString(5, s_sessionID);
-            
-            try{
-                pst.setInt(6, Integer.parseInt(txt_sTime1.getText()));
-
-            }catch(NumberFormatException e){
-                JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid time");
-            }
-            
-            try{
-                pst.setInt(7, Integer.parseInt(txt_eTime1.getText()));
-
-            }catch(NumberFormatException e){
-                JOptionPane.showMessageDialog(this, "Invalid Input : enter a valid time");
-            }
-           // pst.setString(6, sTime);
-           // pst.setString(7, eTime);
-            
-            pst.executeUpdate();
-            
-            JOptionPane.showMessageDialog(this, "Successfully added!!!");
-            table_update();
-            
-            
-            
-            
-           
-            
-            
-        } catch (Exception ex){
-            JOptionPane.showMessageDialog(null, ex);
-        }
-        
-
-    }//GEN-LAST:event_btnAddNot_A_T_SessionActionPerformed
-
-    private void TableN_A_TMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableN_A_TMouseClicked
-
-        DefaultTableModel model = (DefaultTableModel)TableN_A_T.getModel();
-        int i = TableN_A_T.getSelectedRow();
-        
-        String Lec = model.getValueAt(i,1).toString();
-        chkBoxlec.setSelectedItem(Lec);
-        
-        String Grb = model.getValueAt(i,2).toString();
-        chkBoxGrp.setSelectedItem(Grb);
-        
-        String SubGrb = model.getValueAt(i,3).toString();
-        chkBoxSubGrp.setSelectedItem(SubGrb);
-        
-        String Day = model.getValueAt(i,4).toString();
-        chkBox_sDay.setSelectedItem(Day);
-        
-        String sesID = model.getValueAt(i,5).toString();
-        chkBox_sessionID.setSelectedItem(sesID);
-       
-           
-        txt_sTime1.setText(model.getValueAt(i, 6).toString());
-        txt_eTime1.setText(model.getValueAt(i, 7).toString());
-        
-
-        
-    }//GEN-LAST:event_TableN_A_TMouseClicked
-
-    private void clearBtnNot_aTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnNot_aTActionPerformed
-        chkBoxlec.setSelectedIndex(0);
-        chkBoxGrp.setSelectedIndex(0);
-        chkBoxSubGrp.setSelectedIndex(0);
-        chkBox_sDay.setSelectedIndex(0);
-        chkBox_sessionID.setSelectedIndex(0);
-        txt_sTime1.setText("");
-        txt_eTime1.setText("");
-    }//GEN-LAST:event_clearBtnNot_aTActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)TableN_A_T.getModel();
-        int i = TableN_A_T.getSelectedRow();
-         
-         try {
-             int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-             
-             int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to delete the record?","Warning",JOptionPane.YES_NO_OPTION);
-             
-             if(dialogResult == JOptionPane.YES_OPTION){
-                 
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            pst = sqlConn.prepareStatement("delete from addnotavailabletimesession where id=? ");
-            
-        
-            pst.setInt(1, id);
-                 
-            
-            pst.executeUpdate();
-            
-            
-            JOptionPane.showMessageDialog(this, "Successfully Deleted!!!");
-            table_update();
-            
-        chkBoxlec.setSelectedIndex(0);
-        chkBoxGrp.setSelectedIndex(0);
-        chkBoxSubGrp.setSelectedIndex(0);
-        chkBox_sDay.setSelectedIndex(0);
-        chkBox_sessionID.setSelectedIndex(0);
-        txt_sTime1.setText("");
-        txt_eTime1.setText("");
-            
-            
-            
-            
-            //jSpinner_W_time.setText("");     
-                 
-            
-             }
-     
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(workingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(workingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    
-    
-    
-    
-     
-    
-     
-     private void sessionID_Combo(){
-         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            String sql = "select * from session";
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery();
-             while(rs.next()){
-                 chkBox_sessionID.addItem(rs.getString("id"));
-             }
-           
-            
-         
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    }
-     private void sub_groupCombo(){
-         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            String sql = "select * from student";
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery();
-             while(rs.next()){
-                 chkBoxSubGrp.addItem(rs.getString("SubGroupID"));
-             }
-           
-            
-         
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    }
-     private void groupCombo(){
-         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            String sql = "select * from student";
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery();
-             while(rs.next()){
-                 chkBoxGrp.addItem(rs.getString("GroupID"));
-             }
-           
-            
-         
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    }
-     private void lectureCombo(){
-         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            String sql = "select * from lecture";
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery();
-             while(rs.next()){
-                 chkBoxlec.addItem(rs.getString("Name"));
-             }
-           
-            
-         
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    }
-      
-      
-      
-     private void roomCombo(){
-         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
-            
-            String sql = "select * from location";
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = pst.executeQuery();
-             while(rs.next()){
-                 chkBoxRoom.addItem(rs.getString("room"));
-             }
-           
-            
-         
-            
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    }
-    
-     
-     
-     
-     
-     
-     
     /**
      * @param args the command line arguments
      */
@@ -1561,21 +936,9 @@ public class sessions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TableN_A_T;
     private javax.swing.JTable TableSession;
     private javax.swing.JButton WDH;
-    private javax.swing.JButton addPreferedSession;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnAddNot_A_T_Session;
-    private javax.swing.JComboBox<String> chkBoxDay;
-    private javax.swing.JComboBox<String> chkBoxGrp;
-    private javax.swing.JComboBox<String> chkBoxRoom;
-    private javax.swing.JComboBox<String> chkBoxSubGrp;
-    private javax.swing.JComboBox<String> chkBox_sDay;
-    private javax.swing.JComboBox<String> chkBox_sessionID;
-    private javax.swing.JComboBox<String> chkBoxlec;
-    private javax.swing.JButton clearBtn;
-    private javax.swing.JButton clearBtnNot_aT;
     private javax.swing.JPanel contnt;
     private javax.swing.JPanel contnt1;
     private javax.swing.JPanel contnt2;
@@ -1594,24 +957,11 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JTextField jDura;
     private javax.swing.JComboBox<String> jGroup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1620,9 +970,9 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JComboBox<String> jLecture;
+    private javax.swing.JComboBox<String> jLecture2;
     private javax.swing.JTextField jNoStud;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox<String> jSubject;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> jTag;
@@ -1637,9 +987,5 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JButton student;
     private javax.swing.JButton subject;
     private javax.swing.JButton tag;
-    private javax.swing.JTextField txt_eTime;
-    private javax.swing.JTextField txt_eTime1;
-    private javax.swing.JTextField txt_sTime;
-    private javax.swing.JTextField txt_sTime1;
     // End of variables declaration//GEN-END:variables
 }
