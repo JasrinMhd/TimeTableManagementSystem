@@ -155,7 +155,7 @@ public class subject extends javax.swing.JFrame {
             }
         });
 
-        lecture.setText("Lecturer");
+        lecture.setText("Lecturers");
         lecture.setPreferredSize(new java.awt.Dimension(131, 30));
         lecture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +165,11 @@ public class subject extends javax.swing.JFrame {
 
         student.setText("Students");
         student.setPreferredSize(new java.awt.Dimension(131, 30));
+        student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentActionPerformed(evt);
+            }
+        });
 
         subject.setBackground(new java.awt.Color(102, 102, 102));
         subject.setText("Subjects");
@@ -172,6 +177,11 @@ public class subject extends javax.swing.JFrame {
 
         tag.setText("Tags");
         tag.setPreferredSize(new java.awt.Dimension(131, 30));
+        tag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tagActionPerformed(evt);
+            }
+        });
 
         session.setText("Sessions");
         session.setPreferredSize(new java.awt.Dimension(131, 30));
@@ -183,9 +193,19 @@ public class subject extends javax.swing.JFrame {
 
         location.setText("Locations");
         location.setPreferredSize(new java.awt.Dimension(131, 30));
+        location.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locationActionPerformed(evt);
+            }
+        });
 
         generate.setText("Generate Timetable");
         generate.setPreferredSize(new java.awt.Dimension(131, 30));
+        generate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateActionPerformed(evt);
+            }
+        });
 
         logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -194,6 +214,11 @@ public class subject extends javax.swing.JFrame {
         logout.setAutoscrolls(true);
 
         stat.setText("Statistics");
+        stat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout nbLayout = new javax.swing.GroupLayout(nb);
         nb.setLayout(nbLayout);
@@ -546,7 +571,9 @@ public class subject extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void WDHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WDHActionPerformed
-
+         workingDaysHours working_DaysHours = new workingDaysHours();
+        working_DaysHours.show();
+        dispose();
     }//GEN-LAST:event_WDHActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -581,8 +608,9 @@ public class subject extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodeActionPerformed
 
     private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
-        setVisible(false);
-        new lecture().setVisible(true);     
+        lecture Lecture = new lecture();
+       Lecture.show();
+       dispose();   
     }//GEN-LAST:event_lectureActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -766,9 +794,45 @@ public class subject extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLabHrsActionPerformed
 
     private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
-        setVisible(false);
-        new sessions().setVisible(true);     
+        sessions Session = new sessions();
+        Session.show();
+        dispose();    
     }//GEN-LAST:event_sessionActionPerformed
+
+    private void studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentActionPerformed
+        // TODO add your handling code here:
+         Students stud = new Students();
+       stud.show();
+       dispose();
+    }//GEN-LAST:event_studentActionPerformed
+
+    private void tagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tagActionPerformed
+        // TODO add your handling code here:
+        Tags tags = new Tags();
+        tags.show();
+        dispose();
+    }//GEN-LAST:event_tagActionPerformed
+
+    private void locationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationActionPerformed
+        // TODO add your handling code here:
+        AddLocation locatn = new AddLocation();
+        locatn.show();
+        dispose();
+    }//GEN-LAST:event_locationActionPerformed
+
+    private void statActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statActionPerformed
+        // TODO add your handling code here:
+        Statistics stats = new Statistics();
+        stats.show();
+        dispose();
+    }//GEN-LAST:event_statActionPerformed
+
+    private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
+        // TODO add your handling code here:
+        generateTimetable genTime = new generateTimetable();
+        genTime.show();
+        dispose();
+    }//GEN-LAST:event_generateActionPerformed
 
     /**
      * @param args the command line arguments
