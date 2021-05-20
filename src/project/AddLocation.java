@@ -150,7 +150,7 @@ public class AddLocation extends javax.swing.JFrame {
 //        }
 ////    
 //    }
-    
+    //
      
      private void showSesLoc(){
         
