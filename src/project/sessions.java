@@ -1,9 +1,11 @@
+package project;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+
 
 
 
@@ -64,8 +66,278 @@ public class sessions extends javax.swing.JFrame {
         subGroupCombo();
         sessionIDCombo();
         
+        
+        DisplayConsecutiveSession();
+        DisplayNonOverlapSession();
+        DisplayParallelSession();
+        
+        updateConsecutiveCombo1();
+        updateConsecutiveCombo2();
+        updateNonCombo1();
+        updateNonCombo2();
+        updateNonCombo3();
+        updateParallelCombo1();
+        updateParallelCombo2();
+        updateParallelCombo3();
+        
+        DisplaySelectedConsecutiveSession();
+        DisplaySelectedNonOverlapSession();
+        DisplaySelectedParallelSession();
+        
+        clearDatainaAlltextFields();
+        
     }
 
+    //---display sessions table in consecutive , non-overlap , parallel sides
+    
+    private void DisplayConsecutiveSession(){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            consecutiveTable.setModel(DbUtils.resultSetToTableModel(rs));
+                        
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    private void DisplayNonOverlapSession(){
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            nonOverlapTable.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    private void DisplayParallelSession(){
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            parallelTable.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+
+// display all sesion id in combo boxes in consecutive , non overlap and parallel session sides
+    
+    private void  updateConsecutiveCombo1(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                ConseCombo1.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateConsecutiveCombo2(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                ConseCombo2.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateNonCombo1(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                nonCombo1.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateNonCombo2(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                nonCombo2.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateNonCombo3(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                nonCombo3.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateParallelCombo1(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                parallelCombo1.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateParallelCombo2(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                parallelCombo2.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    private void  updateParallelCombo3(){
+        
+        try{Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()){
+                parallelCombo3.addItem(rs.getString("id"));
+            }
+       }catch(Exception e){
+        }
+    }
+    
+    private void DisplaySelectedConsecutiveSession(){
+        
+     // displaying Consecutive Session details
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from consecutivesessions";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            conseSessionShowTable.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    private void DisplaySelectedNonOverlapSession(){
+        
+        // displaying Consecutive Session details
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from nonoverlappingsessions";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            NonSessionShowTable.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    private void DisplaySelectedParallelSession(){
+        
+        // displaying Consecutive Session details
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from parallelsessions";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            
+            ParallelSessionShowTable.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    private void clearDatainaAlltextFields(){
+        
+        // displaying Consecutive Session details
+        
+        try{
+            selectedconse1.setText("");
+            selectedconse2.setText("");
+            
+            selectedNon1.setText("");
+            selectedNon2.setText("");
+            selectedNon3.setText("");
+            
+           selectedParallel1.setText("");
+           selectedParallel2.setText("");
+           selectedParallel3.setText("");
+           
+            
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,10 +390,61 @@ public class sessions extends javax.swing.JFrame {
         jLecture2 = new javax.swing.JComboBox<>();
         contnt1 = new javax.swing.JPanel();
         id1 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        consecutiveTable = new javax.swing.JTable();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        ConseCombo1 = new javax.swing.JComboBox<>();
+        selectedconse1 = new javax.swing.JTextField();
+        refresh1 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        ConseCombo2 = new javax.swing.JComboBox<>();
+        selectedconse2 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        conseSessionShowTable = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
         contnt2 = new javax.swing.JPanel();
         id2 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        nonOverlapTable = new javax.swing.JTable();
+        refresh2 = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        nonCombo1 = new javax.swing.JComboBox<>();
+        selectedNon1 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        nonCombo2 = new javax.swing.JComboBox<>();
+        selectedNon2 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        nonCombo3 = new javax.swing.JComboBox<>();
+        selectedNon3 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        NonSessionShowTable = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
         contnt3 = new javax.swing.JPanel();
         id3 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        parallelTable = new javax.swing.JTable();
+        refresh3 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        parallelCombo1 = new javax.swing.JComboBox<>();
+        selectedParallel1 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        parallelCombo2 = new javax.swing.JComboBox<>();
+        selectedParallel2 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        parallelCombo3 = new javax.swing.JComboBox<>();
+        selectedParallel3 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ParallelSessionShowTable = new javax.swing.JTable();
         contnt4 = new javax.swing.JPanel();
         id4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -409,60 +732,56 @@ public class sessions extends javax.swing.JFrame {
         contntLayout.setHorizontalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contntLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 605, Short.MAX_VALUE))
-            .addGroup(contntLayout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(contntLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(contntLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel9))
-                    .addGroup(contntLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(50, 50, 50)))
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(57, 57, 57)
-                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7))
-                            .addGroup(contntLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(25, 25, 25)))
-                        .addGap(21, 21, 21)
-                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(contntLayout.createSequentialGroup()
-                                .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel8)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jButton3)
-                        .addGap(159, 159, 159)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(37, 37, 37))))
+                        .addGap(35, 35, 35)
+                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(contntLayout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(111, 111, 111)
+                                .addComponent(jButton3)
+                                .addGap(152, 152, 152)
+                                .addComponent(jButton4))
+                            .addGroup(contntLayout.createSequentialGroup()
+                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel9))
+                                .addGap(30, 30, 30)
+                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(57, 57, 57)
+                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel7))
+                                    .addGroup(contntLayout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(25, 25, 25)))
+                                .addGap(21, 21, 21)
+                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(contntLayout.createSequentialGroup()
+                                        .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel8))
+                                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jButton2)
+                                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                .addGap(0, 72, Short.MAX_VALUE))
+            .addGroup(contntLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)))
         );
         contntLayout.setVerticalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,75 +809,527 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGap(64, 64, 64)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel9)
+                    .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Manage Sessions", contnt);
+
+        jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel24.setText("See all the Sessions here ");
+        jLabel24.setPreferredSize(new java.awt.Dimension(170, 50));
+
+        consecutiveTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id", "lecture", "tag", "noOFStudent", "groupID", "SubjectCode", "Duration Hours"
+            }
+        ));
+        consecutiveTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                consecutiveTableMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(consecutiveTable);
+
+        jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel25.setText("Add Consecutive Sessions");
+        jLabel25.setPreferredSize(new java.awt.Dimension(170, 50));
+
+        jLabel26.setText("Select  your 2nd Session ID");
+
+        ConseCombo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConseCombo1MouseClicked(evt);
+            }
+        });
+        ConseCombo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConseCombo1ActionPerformed(evt);
+            }
+        });
+        ConseCombo1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ConseCombo1KeyPressed(evt);
+            }
+        });
+
+        selectedconse1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectedconse1ActionPerformed(evt);
+            }
+        });
+
+        refresh1.setText("Refresh");
+        refresh1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, java.awt.SystemColor.activeCaption));
+        refresh1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refresh1ActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("Select  your 1st Session ID");
+
+        ConseCombo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConseCombo2MouseClicked(evt);
+            }
+        });
+        ConseCombo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConseCombo2ActionPerformed(evt);
+            }
+        });
+        ConseCombo2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ConseCombo2KeyPressed(evt);
+            }
+        });
+
+        selectedconse2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectedconse2ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Trebuchet MS", 3, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel28.setText("View Consecutive Sessions");
+
+        conseSessionShowTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(conseSessionShowTable);
+
+        jButton5.setText("Add Consecutive Session");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout contnt1Layout = new javax.swing.GroupLayout(contnt1);
         contnt1.setLayout(contnt1Layout);
         contnt1Layout.setHorizontalGroup(
             contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contnt1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt1Layout.createSequentialGroup()
+                .addGap(333, 333, 333)
                 .addComponent(id1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 605, Short.MAX_VALUE))
+                .addGap(300, 300, 300))
+            .addGroup(contnt1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt1Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(contnt1Layout.createSequentialGroup()
+                        .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ConseCombo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ConseCombo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
+                        .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(selectedconse2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(selectedconse1))
+                        .addGap(65, 65, 65)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(contnt1Layout.createSequentialGroup()
+                        .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         contnt1Layout.setVerticalGroup(
             contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(18, 18, 18)
+                .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refresh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(id1)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ConseCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ConseCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(selectedconse2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consecutive Sessions", contnt1);
+
+        jLabel29.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel29.setText("See all the Sessions here  ");
+
+        nonOverlapTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Lecture", "Tag", "Subject Code", "No. Of Students", "Duration", "Group ID"
+            }
+        ));
+        nonOverlapTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nonOverlapTableMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(nonOverlapTable);
+
+        refresh2.setText("Refresh");
+        refresh2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refresh2ActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel30.setText("Add Non-Overlapping Sessions");
+
+        jLabel31.setText("Select your 1st Session ID");
+
+        nonCombo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nonCombo1ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setText("Select your 2nd Session ID");
+
+        nonCombo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nonCombo2ActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setText("Select your 3rd Session ID");
+
+        nonCombo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nonCombo3ActionPerformed(evt);
+            }
+        });
+
+        jLabel34.setFont(new java.awt.Font("Trebuchet MS", 3, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel34.setText("View Non-Overlap Sessions");
+
+        NonSessionShowTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(NonSessionShowTable);
+
+        jButton6.setText("Add Non-Overlap  Session");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout contnt2Layout = new javax.swing.GroupLayout(contnt2);
         contnt2.setLayout(contnt2Layout);
         contnt2Layout.setHorizontalGroup(
             contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 605, Short.MAX_VALUE))
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contnt2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(contnt2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(refresh2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(contnt2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(contnt2Layout.createSequentialGroup()
+                        .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nonCombo1, 0, 116, Short.MAX_VALUE)
+                            .addComponent(nonCombo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nonCombo3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(contnt2Layout.createSequentialGroup()
+                                .addComponent(selectedNon3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         contnt2Layout.setVerticalGroup(
             contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contnt2Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt2Layout.createSequentialGroup()
+                        .addGap(0, 61, Short.MAX_VALUE)
+                        .addComponent(refresh2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(id2)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nonCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nonCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nonCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedNon3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Non Overlapping Sessions", contnt2);
+
+        jLabel35.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel35.setText("See all the Sessions here  ");
+
+        parallelTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Lecture", "Tag", "Subject Code", "No. Of Students", "Duration", "Group ID"
+            }
+        ));
+        parallelTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                parallelTableMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(parallelTable);
+
+        refresh3.setText("Refresh");
+        refresh3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refresh3ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel36.setText("Add Pararllel Sessions");
+
+        jLabel37.setText("Select your 2nd Session ID");
+
+        parallelCombo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parallelCombo1ActionPerformed(evt);
+            }
+        });
+
+        jLabel38.setText("Select your 1st Session ID");
+
+        parallelCombo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parallelCombo2ActionPerformed(evt);
+            }
+        });
+
+        selectedParallel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectedParallel2ActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setText("Select your 3rd Session ID");
+
+        parallelCombo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                parallelCombo3ActionPerformed(evt);
+            }
+        });
+
+        selectedParallel3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectedParallel3ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Add Parallel Session");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jLabel40.setFont(new java.awt.Font("Trebuchet MS", 3, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel40.setText("View Parallel Sessions");
+
+        ParallelSessionShowTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(ParallelSessionShowTable);
 
         javax.swing.GroupLayout contnt3Layout = new javax.swing.GroupLayout(contnt3);
         contnt3.setLayout(contnt3Layout);
         contnt3Layout.setHorizontalGroup(
             contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt3Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(id3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 605, Short.MAX_VALUE))
+                .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contnt3Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(id3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(contnt3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(refresh3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(contnt3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contnt3Layout.createSequentialGroup()
+                            .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(contnt3Layout.createSequentialGroup()
+                                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(parallelCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(contnt3Layout.createSequentialGroup()
+                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(29, 29, 29)
+                                    .addComponent(parallelCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(contnt3Layout.createSequentialGroup()
+                                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(29, 29, 29)
+                                    .addComponent(parallelCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(52, 52, 52)
+                            .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(selectedParallel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(contnt3Layout.createSequentialGroup()
+                                    .addComponent(selectedParallel3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         contnt3Layout.setVerticalGroup(
             contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt3Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contnt3Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt3Layout.createSequentialGroup()
+                        .addGap(0, 54, Short.MAX_VALUE)
+                        .addComponent(refresh3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(id3)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(parallelCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedParallel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(parallelCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(parallelCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectedParallel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jTabbedPane1.addTab(" Parallel Sessions", contnt3);
@@ -667,7 +1438,7 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
                 .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClearPreSession, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addPreferedSession, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -824,7 +1595,7 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chkBox_sDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
                 .addGroup(contnt5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnDeleteNAT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnClearNAT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1465,6 +2236,615 @@ public class sessions extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnDeleteNATActionPerformed
 
+    private void ConseCombo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo1MouseClicked
+        //    String SelecetedConse = (String) ConseCombo1.getSelectedItem();
+        //    ChooseConseList5.setText(SelecetedConse);
+    }//GEN-LAST:event_ConseCombo1MouseClicked
+
+    private void ConseCombo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConseCombo1ActionPerformed
+        String SelecetedConse = (String) ConseCombo1.getSelectedItem();
+        selectedconse1.setText(SelecetedConse);
+
+        //        try{
+            //            Class.forName("com.mysql.jdbc.Driver");
+            //            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            //
+            //            String sql = "select * from session";
+            //            PreparedStatement pstmt = conn.prepareStatement(sql);
+            //            ResultSet rs = pstmt.executeQuery();
+            //
+            //
+            //            while (rs.next()){
+                //                String SelectedID = ConseCombo.getSelectedItem().toString();
+                //                selectedConseText.setText(SelectedID);
+                //
+                //            }
+            //        }catch(Exception e){
+            //        }
+
+        //---------------
+        //        String SelectedID = ConseCombo.getSelectedItem().toString();
+        //        selectedConseText.setText(SelectedID);
+    }//GEN-LAST:event_ConseCombo1ActionPerformed
+
+    private void ConseCombo1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConseCombo1KeyPressed
+        //    String SelecetedConse = (String) ConseCombo1.getSelectedItem();
+        //    ChooseConseList5.setText(SelecetedConse);
+    }//GEN-LAST:event_ConseCombo1KeyPressed
+
+    private void selectedconse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedconse1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectedconse1ActionPerformed
+
+    private void ConseCombo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConseCombo2MouseClicked
+
+    private void ConseCombo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConseCombo2ActionPerformed
+        String SelecetedConse = (String) ConseCombo2.getSelectedItem();
+        selectedconse2.setText(SelecetedConse);
+    }//GEN-LAST:event_ConseCombo2ActionPerformed
+
+    private void ConseCombo2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConseCombo2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConseCombo2KeyPressed
+
+    private void selectedconse2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedconse2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectedconse2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Adding tag details to database
+            String sql = "insert into consecutivesessions(sessionID1,sessionID2) values (?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, selectedconse1.getText());
+            pstmt.setString(2, selectedconse2.getText());
+
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Consecutive Sessions details added Successfully");
+            conn.close();
+
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Display updated tag data from database to tag table
+            PreparedStatement pstmt = conn.prepareStatement("select * from consecutivesessions");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)conseSessionShowTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("CID"),rs.getString("sessionID1"),rs.getString("sessionID2")};
+                tm.addRow(o);
+            }
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        // clear data after adding in the form
+        ConseCombo1.setSelectedIndex(0);
+        ConseCombo2.setSelectedIndex(0);
+        selectedconse1.setText("");
+        selectedconse2.setText("");
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void nonOverlapTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonOverlapTableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nonOverlapTableMouseClicked
+
+    private void refresh2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh2ActionPerformed
+        // refresh -> session table 
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            //Selecting updated data from database to Student Table after adding
+            PreparedStatement pstmt = conn.prepareStatement("select * from session");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)nonOverlapTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
+                tm.addRow(o);
+            }
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        // refresh combo boxes
+        try{
+            nonCombo1.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                nonCombo1.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        try{
+            nonCombo2.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                nonCombo2.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        try{
+            nonCombo3.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                nonCombo3.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        // clearing data in text fields when refresh
+        selectedNon1.setText("");
+        selectedNon2.setText("");
+        selectedNon3.setText("");
+        
+        // refresh ->  selected Non-Overalp session table 
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Selecting updated data from database to Student Table after adding
+            PreparedStatement pstmt = conn.prepareStatement("select * from nonoverlappingsessions");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)NonSessionShowTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("NonOverlapID"),rs.getInt("sessionID1"),rs.getInt("sessionID2"),rs.getInt("sessionID3")};
+                tm.addRow(o);
+            }
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_refresh2ActionPerformed
+
+    private void refresh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh1ActionPerformed
+        
+        // refresh -> session table 
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            //Selecting updated data from database to Student Table after adding
+            PreparedStatement pstmt = conn.prepareStatement("select * from session");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)consecutiveTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("lecture2"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
+                tm.addRow(o);
+            }
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        // refresh combo boxes
+        try{
+            ConseCombo1.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                ConseCombo1.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        try{
+            ConseCombo2.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                ConseCombo2.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        // clearing data in text fields when refresh
+        selectedconse1.setText("");
+        selectedconse2.setText("");
+        
+        // refresh ->  selected conse session table 
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Selecting updated data from database to Student Table after adding
+            PreparedStatement pstmt = conn.prepareStatement("select * from consecutivesessions");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)conseSessionShowTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("CID"),rs.getInt("sessionID1"),rs.getInt("sessionID2")};
+                tm.addRow(o);
+            }
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        
+        //        try{
+            //            Class.forName("com.mysql.jdbc.Driver");
+            //            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            //
+            //            String sql = "select * from consecutivesessions";
+            //            PreparedStatement pstmt = conn.prepareStatement(sql);
+            //            ResultSet rs = pstmt.executeQuery();
+            //
+            //            conseSessionShowTable.setModel(DbUtils.resultSetToTableModel(rs));
+            //        } catch(Exception e){
+            //            JOptionPane.showMessageDialog(null, e);
+            //        }
+
+        //         Statement stmt = null;
+        //      String sql="select * from session;
+        //      try{
+            //      Connect conn=new Connect();
+            //      stmt = conn.makeStatement();
+            //        Class.forName("com.mysql.jdbc.Driver");
+            //        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            //
+            //       rs = stmt.executeQuery(sql);
+            //        while(rs.next()) {
+                //            int i=0;
+                //            Object ids = rs.getString("id");
+                //            Object items = rs.getString("GatewayJob");
+                //            Object descriptions = rs.getString("Status");
+                //            Object quantitys = rs.getString("Timework");
+                //            Object price = rs.getString("Notes");
+                //
+                //            jTable1.getModel().setValueAt(ids,i, 0 );
+                //            jTable1.getModel().setValueAt(items, i, 1);
+                //            jTable1.getModel().setValueAt(descriptions, i, 2);
+                //           jTable1.getModel().setValueAt(quantitys, i, 3);
+                //          jTable1.getModel().setValueAt(price, i, 4);
+                //          System.out.println(i);
+                //        i++;
+                //        }
+
+            //        try{
+                //            Class.forName("com.mysql.jdbc.Driver");
+                //            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+                //
+                //            String sql = "select * from session";
+                //            PreparedStatement pstmt = conn.prepareStatement(sql);
+                //            ResultSet rs = pstmt.executeQuery();
+                //
+                //            consecutiveTable.setModel(DbUtils.resultSetToTableModel(rs));
+                //        } catch(Exception e){
+                //            JOptionPane.showMessageDialog(null, e);
+                //        }
+    }//GEN-LAST:event_refresh1ActionPerformed
+
+    private void parallelTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_parallelTableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_parallelTableMouseClicked
+
+    private void refresh3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh3ActionPerformed
+         // refresh -> parallel table 
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            //Selecting updated data from database to Student Table after adding
+            PreparedStatement pstmt = conn.prepareStatement("select * from session");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)parallelTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
+                tm.addRow(o);
+            }
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        // refresh combo boxes
+        try{
+            parallelCombo1.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                parallelCombo1.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        try{
+            parallelCombo2.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                parallelCombo2.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        try{
+            parallelCombo3.removeAllItems();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            String sql = "select * from session";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                parallelCombo3.addItem(rs.getString("id"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        // clearing data in text fields when refresh
+        selectedParallel1.setText("");
+        selectedParallel2.setText("");
+        selectedParallel3.setText("");
+        
+        // refresh ->  selected parallel session table 
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Selecting updated data from database to Student Table after adding
+            PreparedStatement pstmt = conn.prepareStatement("select * from parallelsessions");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)ParallelSessionShowTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("PID"),rs.getInt("sessionID1"),rs.getInt("sessionID2"),rs.getInt("sessionID3")};
+                tm.addRow(o);
+            }
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_refresh3ActionPerformed
+
+    private void parallelCombo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parallelCombo1ActionPerformed
+        String SelecetedConse = (String) parallelCombo1.getSelectedItem();
+        selectedParallel1.setText(SelecetedConse);
+    }//GEN-LAST:event_parallelCombo1ActionPerformed
+
+    private void parallelCombo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parallelCombo2ActionPerformed
+       String SelecetedConse = (String) parallelCombo2.getSelectedItem();
+        selectedParallel2.setText(SelecetedConse);
+    }//GEN-LAST:event_parallelCombo2ActionPerformed
+
+    private void selectedParallel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedParallel2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectedParallel2ActionPerformed
+
+    private void parallelCombo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parallelCombo3ActionPerformed
+        String SelecetedConse = (String) parallelCombo3.getSelectedItem();
+        selectedParallel3.setText(SelecetedConse);
+    }//GEN-LAST:event_parallelCombo3ActionPerformed
+
+    private void selectedParallel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedParallel3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectedParallel3ActionPerformed
+
+    private void consecutiveTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consecutiveTableMouseClicked
+
+//        try{
+//
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+//
+//            String sql = "select id from session";
+//            PreparedStatement pstmt = conn.prepareStatement(sql);
+//            ResultSet rs = pstmt.executeQuery();
+//
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+//
+//        // ChooseConseList2.setText(model.getValueAt(selectedRowIndex, 0).toString());
+//
+//        //----------
+//
+//        try{Class.forName("com.mysql.jdbc.Driver");
+//            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+//
+//            String sql = "select * from session";
+//            PreparedStatement pstmt = conn.prepareStatement(sql);
+//            ResultSet rs = pstmt.executeQuery();
+//
+//            while (rs.next()){
+//                ParallelCombo.addItem(rs.getString("id"));
+//            }
+//        }catch(Exception e){
+//        }
+    }//GEN-LAST:event_consecutiveTableMouseClicked
+
+    private void nonCombo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonCombo1ActionPerformed
+        String SelecetedConse = (String) nonCombo1.getSelectedItem();
+        selectedNon1.setText(SelecetedConse);
+    }//GEN-LAST:event_nonCombo1ActionPerformed
+
+    private void nonCombo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonCombo2ActionPerformed
+        String SelecetedConse = (String) nonCombo2.getSelectedItem();
+        selectedNon2.setText(SelecetedConse);
+    }//GEN-LAST:event_nonCombo2ActionPerformed
+
+    private void nonCombo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonCombo3ActionPerformed
+        String SelecetedConse = (String) nonCombo3.getSelectedItem();
+        selectedNon3.setText(SelecetedConse);
+    }//GEN-LAST:event_nonCombo3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Adding tag details to database
+            String sql = "insert into nonoverlappingsessions(sessionID1,sessionID2,sessionID3) values (?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, selectedNon1.getText());
+            pstmt.setString(2, selectedNon2.getText());
+            pstmt.setString(3, selectedNon3.getText());
+
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Non-Overlapping Sessions details added Successfully");
+            conn.close();
+
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Display updated tag data from database to tag table
+            PreparedStatement pstmt = conn.prepareStatement("select * from nonoverlappingsessions");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)NonSessionShowTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("NonOverlapID"),rs.getString("sessionID1"),rs.getString("sessionID2"),rs.getString("sessionID3")};
+                tm.addRow(o);
+            }
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        // clear data after adding in the form
+        nonCombo1.setSelectedIndex(0);
+        nonCombo2.setSelectedIndex(0);
+        nonCombo3.setSelectedIndex(0);
+        selectedNon1.setText("");
+        selectedNon2.setText("");
+        selectedNon3.setText("");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Adding tag details to database
+            String sql = "insert into parallelsessions(sessionID1,sessionID2,sessionID3) values (?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, selectedParallel1.getText());
+            pstmt.setString(2, selectedParallel2.getText());
+            pstmt.setString(3, selectedParallel3.getText());
+
+            pstmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Parallel Sessions details added Successfully");
+            conn.close();
+
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+
+            //Display updated tag data from database to tag table
+            PreparedStatement pstmt = conn.prepareStatement("select * from parallelsessions");
+            ResultSet rs = pstmt.executeQuery();
+            DefaultTableModel tm=(DefaultTableModel)ParallelSessionShowTable.getModel();
+            tm.setRowCount(0);
+
+            while (rs.next()){
+                Object o[] = {rs.getInt("PID"),rs.getString("sessionID1"),rs.getString("sessionID2"),rs.getString("sessionID3")};
+                tm.addRow(o);
+            }
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        // clear data after adding in the form
+        parallelCombo1.setSelectedIndex(0);
+        parallelCombo2.setSelectedIndex(0);
+        parallelCombo3.setSelectedIndex(0);
+        selectedParallel1.setText("");
+        selectedParallel2.setText("");
+        selectedParallel3.setText("");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     private void roomComboBox(){
          try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -1584,6 +2964,10 @@ public class sessions extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1596,6 +2980,10 @@ public class sessions extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnClearNAT;
     private javax.swing.JButton BtnDeleteNAT;
+    private javax.swing.JComboBox<String> ConseCombo1;
+    private javax.swing.JComboBox<String> ConseCombo2;
+    private javax.swing.JTable NonSessionShowTable;
+    private javax.swing.JTable ParallelSessionShowTable;
     private javax.swing.JTable TableSession;
     private javax.swing.JButton WDH;
     private javax.swing.JButton addPreferedSession;
@@ -1609,6 +2997,8 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> chkBox_sDay;
     private javax.swing.JComboBox<String> chkBox_sessionID;
     private javax.swing.JComboBox<String> chkBoxlec;
+    private javax.swing.JTable conseSessionShowTable;
+    private javax.swing.JTable consecutiveTable;
     private javax.swing.JPanel contnt;
     private javax.swing.JPanel contnt1;
     private javax.swing.JPanel contnt2;
@@ -1627,6 +3017,9 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JTextField jDura;
     private javax.swing.JComboBox<String> jGroup;
     private javax.swing.JLabel jLabel1;
@@ -1645,8 +3038,25 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1657,6 +3067,12 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JTextField jNoStud;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JComboBox<String> jSubject;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
@@ -1667,6 +3083,25 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JLabel logoLab;
     private javax.swing.JButton logout;
     private javax.swing.JPanel nb;
+    private javax.swing.JComboBox<String> nonCombo1;
+    private javax.swing.JComboBox<String> nonCombo2;
+    private javax.swing.JComboBox<String> nonCombo3;
+    private javax.swing.JTable nonOverlapTable;
+    private javax.swing.JComboBox<String> parallelCombo1;
+    private javax.swing.JComboBox<String> parallelCombo2;
+    private javax.swing.JComboBox<String> parallelCombo3;
+    private javax.swing.JTable parallelTable;
+    private javax.swing.JButton refresh1;
+    private javax.swing.JButton refresh2;
+    private javax.swing.JButton refresh3;
+    private javax.swing.JTextField selectedNon1;
+    private javax.swing.JTextField selectedNon2;
+    private javax.swing.JTextField selectedNon3;
+    private javax.swing.JTextField selectedParallel1;
+    private javax.swing.JTextField selectedParallel2;
+    private javax.swing.JTextField selectedParallel3;
+    private javax.swing.JTextField selectedconse1;
+    private javax.swing.JTextField selectedconse2;
     private javax.swing.JButton session;
     private javax.swing.JButton stat;
     private javax.swing.JButton student;
