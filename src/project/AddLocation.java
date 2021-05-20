@@ -1570,7 +1570,7 @@ public class AddLocation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
         
-        // display table
+        // display table new
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
