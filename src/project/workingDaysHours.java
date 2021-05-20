@@ -1065,6 +1065,7 @@ public class workingDaysHours extends javax.swing.JFrame {
     }//GEN-LAST:event_tagActionPerformed
 
     private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
+        // TODO add your handling code here:
         sessions Session = new sessions();
         Session.show();
         dispose();
@@ -1078,12 +1079,14 @@ public class workingDaysHours extends javax.swing.JFrame {
     }//GEN-LAST:event_locationActionPerformed
 
     private void statActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statActionPerformed
+        // TODO add your handling code here:
         Statistics stats = new Statistics();
         stats.show();
         dispose();
     }//GEN-LAST:event_statActionPerformed
 
     private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
+        // TODO add your handling code here:
         generateTimetable genTime = new generateTimetable();
         genTime.show();
         dispose();
