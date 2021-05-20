@@ -150,11 +150,14 @@
             </Component>
             <Component class="javax.swing.JButton" name="lecture">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Lectures"/>
+                <Property name="text" type="java.lang.String" value="Lecturers"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lectureActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="student">
               <Properties>
@@ -174,6 +177,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subjectActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="tag">
               <Properties>
@@ -214,6 +220,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="locationActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="generate">
               <Properties>
@@ -222,6 +231,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generateActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="logout">
               <Properties>
@@ -242,6 +254,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Statistics"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="statActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

@@ -126,7 +126,7 @@
             <Component class="javax.swing.JButton" name="WDH">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="66" type="rgb"/>
+                  <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add Working Days and Hours"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -144,6 +144,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lectureActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="student">
               <Properties>
@@ -152,6 +155,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="subject">
               <Properties>
@@ -160,6 +166,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subjectActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="tag">
               <Properties>
@@ -168,6 +177,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tagActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="session">
               <Properties>
@@ -176,6 +188,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sessionActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="location">
               <Properties>
@@ -184,6 +199,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="locationActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="generate">
               <Properties>
@@ -192,6 +210,9 @@
                   <Dimension value="[131, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generateActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="logout">
               <Properties>
@@ -212,6 +233,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Statistics"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="statActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -412,8 +436,8 @@
                       <EmptySpace pref="20" max="32767" attributes="0"/>
                       <Component id="deleteWDH" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="127" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="129" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -527,7 +551,7 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="5">
+                      <Table columnCount="4" rowCount="7">
                         <Column editable="true" title="ID" type="java.lang.Object"/>
                         <Column editable="true" title="Num_of_Working_Days" type="java.lang.Object"/>
                         <Column editable="true" title="Working days " type="java.lang.Object"/>
@@ -582,7 +606,7 @@
             <Component class="javax.swing.JSpinner" name="jSpinner_W_time">
               <Properties>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="1" maximum="24" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                  <SpinnerModel initial="0" maximum="24" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
                 </Property>
                 <Property name="doubleBuffered" type="boolean" value="true"/>
               </Properties>

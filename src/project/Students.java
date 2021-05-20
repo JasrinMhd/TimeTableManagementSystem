@@ -132,7 +132,7 @@ public class Students extends javax.swing.JFrame {
             }
         });
 
-        lecture.setText("Lectures");
+        lecture.setText("Lecturers");
         lecture.setPreferredSize(new java.awt.Dimension(131, 30));
         lecture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +152,11 @@ public class Students extends javax.swing.JFrame {
 
         subject.setText("Subjects");
         subject.setPreferredSize(new java.awt.Dimension(131, 30));
+        subject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subjectActionPerformed(evt);
+            }
+        });
 
         tag.setText("Tags");
         tag.setPreferredSize(new java.awt.Dimension(131, 30));
@@ -171,9 +176,19 @@ public class Students extends javax.swing.JFrame {
 
         location.setText("Locations");
         location.setPreferredSize(new java.awt.Dimension(131, 30));
+        location.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locationActionPerformed(evt);
+            }
+        });
 
         generate.setText("Generate Timetable");
         generate.setPreferredSize(new java.awt.Dimension(131, 30));
+        generate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateActionPerformed(evt);
+            }
+        });
 
         logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -187,6 +202,11 @@ public class Students extends javax.swing.JFrame {
         });
 
         stat.setText("Statistics");
+        stat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout nbLayout = new javax.swing.GroupLayout(nb);
         nb.setLayout(nbLayout);
@@ -744,6 +764,9 @@ public class Students extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void WDHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WDHActionPerformed
+       workingDaysHours working_DaysHours = new workingDaysHours();
+        working_DaysHours.show();
+        dispose();
     }//GEN-LAST:event_WDHActionPerformed
     
     private void studentTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentTableMouseClicked
@@ -1109,6 +1132,9 @@ public class Students extends javax.swing.JFrame {
     }//GEN-LAST:event_EditProgrammeFieldMouseClicked
 
     private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
+        lecture Lecture = new lecture();
+       Lecture.show();
+       dispose();
     }//GEN-LAST:event_lectureActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -1132,8 +1158,38 @@ public class Students extends javax.swing.JFrame {
     }//GEN-LAST:event_studentActionPerformed
 
     private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
-       
+        sessions Session = new sessions();
+        Session.show();
+        dispose();
     }//GEN-LAST:event_sessionActionPerformed
+
+    private void subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectActionPerformed
+        // TODO add your handling code here:
+        subject Subject = new subject();
+       Subject.show();
+       dispose();
+    }//GEN-LAST:event_subjectActionPerformed
+
+    private void locationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationActionPerformed
+        // TODO add your handling code here:
+        AddLocation locatn = new AddLocation();
+        locatn.show();
+        dispose();
+    }//GEN-LAST:event_locationActionPerformed
+
+    private void statActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statActionPerformed
+        // TODO add your handling code here:
+        Statistics stats = new Statistics();
+        stats.show();
+        dispose();
+    }//GEN-LAST:event_statActionPerformed
+
+    private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
+        // TODO add your handling code here:
+        generateTimetable genTime = new generateTimetable();
+        genTime.show();
+        dispose();
+    }//GEN-LAST:event_generateActionPerformed
 
     /**
      * @param args the command line arguments

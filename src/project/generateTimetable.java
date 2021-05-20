@@ -9,14 +9,14 @@ package project;
  *
  * @author Jahran
  */
-public class homePage extends javax.swing.JFrame {
+public class generateTimetable extends javax.swing.JFrame {
 
     private boolean True;
 
     /**
      * Creates new form NewJFrame
      */
-    public homePage() {
+    public generateTimetable() {
         initComponents();
     }
 
@@ -46,12 +46,16 @@ public class homePage extends javax.swing.JFrame {
         logo = new javax.swing.JPanel();
         logoLab = new javax.swing.JLabel();
         contnt = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         nb.setBackground(new java.awt.Color(153, 153, 255));
 
-        WDH.setText("Add Working Days and Hours");
+        WDH.setText("Working Days and Hours");
         WDH.setPreferredSize(new java.awt.Dimension(131, 30));
         WDH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,11 +113,6 @@ public class homePage extends javax.swing.JFrame {
 
         generate.setText("Generate Timetable");
         generate.setPreferredSize(new java.awt.Dimension(131, 30));
-        generate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generateActionPerformed(evt);
-            }
-        });
 
         logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -167,7 +166,7 @@ public class homePage extends javax.swing.JFrame {
                 .addComponent(stat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(generate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout)
                 .addContainerGap())
         );
@@ -212,15 +211,60 @@ public class homePage extends javax.swing.JFrame {
                 .addComponent(logoLab))
         );
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 405, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Lecturer", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 405, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Student Group", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 405, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Location", jPanel3);
+
         javax.swing.GroupLayout contntLayout = new javax.swing.GroupLayout(contnt);
         contnt.setLayout(contntLayout);
         contntLayout.setHorizontalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(contntLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         contntLayout.setVerticalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(contntLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -266,20 +310,19 @@ public class homePage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void WDHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WDHActionPerformed
-     
         workingDaysHours working_DaysHours = new workingDaysHours();
         working_DaysHours.show();
         dispose();
         
         
+        
     }//GEN-LAST:event_WDHActionPerformed
 
     private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
-        lecture Lecture = new lecture();
+        // TODO add your handling code here:
+         lecture Lecture = new lecture();
        Lecture.show();
        dispose();
-        
-       
     }//GEN-LAST:event_lectureActionPerformed
 
     private void studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentActionPerformed
@@ -291,7 +334,7 @@ public class homePage extends javax.swing.JFrame {
 
     private void subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectActionPerformed
         // TODO add your handling code here:
-        subject Subject = new subject();
+         subject Subject = new subject();
        Subject.show();
        dispose();
     }//GEN-LAST:event_subjectActionPerformed
@@ -304,10 +347,10 @@ public class homePage extends javax.swing.JFrame {
     }//GEN-LAST:event_tagActionPerformed
 
     private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
+        // TODO add your handling code here:
         sessions Session = new sessions();
         Session.show();
         dispose();
-
     }//GEN-LAST:event_sessionActionPerformed
 
     private void locationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationActionPerformed
@@ -323,13 +366,6 @@ public class homePage extends javax.swing.JFrame {
         stats.show();
         dispose();
     }//GEN-LAST:event_statActionPerformed
-
-    private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
-        // TODO add your handling code here:
-        generateTimetable genTime = new generateTimetable();
-        genTime.show();
-        dispose();
-    }//GEN-LAST:event_generateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,20 +384,20 @@ public class homePage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(homePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(generateTimetable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(homePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(generateTimetable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(homePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(generateTimetable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(homePage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(generateTimetable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new homePage().setVisible(true);
+                new generateTimetable().setVisible(true);
             }
         });
     }
@@ -373,6 +409,10 @@ public class homePage extends javax.swing.JFrame {
     private javax.swing.JButton generate;
     private javax.swing.JPanel heading;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton lecture;
     private javax.swing.JButton location;
     private javax.swing.JPanel logo;
