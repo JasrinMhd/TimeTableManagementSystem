@@ -795,240 +795,272 @@ public class workingDaysHours extends javax.swing.JFrame {
         
         String cBoxNo_WDy = model.getValueAt(i,1).toString();
         cBoxNo_WD.setSelectedItem(cBoxNo_WDy);
+        
+               chk_monday.setSelected(false);
+               chk_tuesday.setSelected(false);
+               chk_wednesday.setSelected(false);
+               chk_thursday.setSelected(false);  
+               chk_friday.setSelected(false);
+               chk_saturday.setSelected(false);
+               chk_sunday.setSelected(false);
+               
+        String w_days = (String) model.getValueAt(i, 2);
          
+        String[] arrOfStr = w_days.split(" ");
+        for(String a: arrOfStr){
+            
+            if("Monday".equals(a)){
+                chk_monday.setSelected(true);
+                
+            }else if("Tuesday".equals(a)){
+                chk_tuesday.setSelected(true);
+                
+            }else if("Wednesday".equals(a)){
+                chk_wednesday.setSelected(true);
+                
+            }else if("Thursday".equals(a)){
+                chk_thursday.setSelected(true);
+                
+            }else if("Friday".equals(a)){
+                chk_friday.setSelected(true);
+                
+            }else if("Saturday".equals(a)){
+                chk_saturday.setSelected(true);
+                
+            }else if("Sunday".equals(a)){
+                chk_sunday.setSelected(true);
+            }
+        }
 
           
           
-           String w_days = model.getValueAt(i, 2).toString();
-           if(w_days.equals("Monday Tuesday Wednesday Thursday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(true);  
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           if(w_days.equals("Monday Wednesday Thursday ")){
-               chk_monday.setSelected(true);
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(true); 
-               chk_tuesday.setSelected(false);
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           if(w_days.equals("Tuesday ")){
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(true);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);  
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           if(w_days.equals("Wednesday ")){
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false);
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(false);  
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           if(w_days.equals("Thursday ")){
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(true);  
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           if(w_days.equals("Friday ")){
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);  
-               chk_friday.setSelected(true);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           
-           if(w_days.equals("Saturday ")){
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);  
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-           if(w_days.equals("Sunday ")){
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);  
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(true);
-                    
-           }
-           
-           
-           
-           
-           
-           
-           if(w_days.equals("Monday Tuesday Wednesday Thursday Friday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(true);  
-               chk_friday.setSelected(true);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-                    
-           }
-            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(true);  
-               chk_friday.setSelected(true);
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(false);
-                    
-           }
-            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday Sunday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(true);  
-               chk_friday.setSelected(true);
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-                    
-           }
-            
-           if(w_days.equals("Monday Tuesday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true); 
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-           }
-           if(w_days.equals("Monday Tuesday Wednesday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true); 
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-           }
-            if(w_days.equals("Monday Tuesday Saturday Sunday ")){
-                chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-           }
-            if(w_days.equals("Monday Tuesday Friday Saturday Sunday ")){
-                chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(true);
-           }
-             if(w_days.equals("Monday Tuesday Thursday Friday ")){
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(true);
-               chk_friday.setSelected(true);
-               chk_thursday.setSelected(true);
-               chk_saturday.setSelected(false);
-               chk_sunday.setSelected(false);
-               chk_wednesday.setSelected(false);
-               
-           }
-           
-           if(w_days.equals("Monday Saturday Sunday ")){
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_monday.setSelected(true);
-               chk_tuesday.setSelected(false); 
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-           }
-           if(w_days.equals("Tuesday Saturday Sunday ")){
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(true); 
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-           }
-           if(w_days.equals("Wednesday Saturday Sunday ")){
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false); 
-               chk_wednesday.setSelected(true);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-           }
-           if(w_days.equals("Thursday Saturday Sunday ")){
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false); 
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(true);
-               chk_friday.setSelected(false);
-           }
-           if(w_days.equals("Friday Saturday Sunday ")){
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false); 
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(true);
-           }
-           if(w_days.equals("Saturday Sunday ")){
-               chk_saturday.setSelected(true);
-               chk_sunday.setSelected(true);
-               chk_monday.setSelected(false);
-               chk_tuesday.setSelected(false); 
-               chk_wednesday.setSelected(false);
-               chk_thursday.setSelected(false);
-               chk_friday.setSelected(false);
-           }
+//           String w_days = model.getValueAt(i, 2).toString();
+//           if(w_days.equals("Monday Tuesday Wednesday Thursday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(true);  
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           if(w_days.equals("Monday Wednesday Thursday ")){
+//               chk_monday.setSelected(true);
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(true); 
+//               chk_tuesday.setSelected(false);
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           if(w_days.equals("Tuesday ")){
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(true);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);  
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           if(w_days.equals("Wednesday ")){
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false);
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(false);  
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           if(w_days.equals("Thursday ")){
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(true);  
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           if(w_days.equals("Friday ")){
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);  
+//               chk_friday.setSelected(true);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           
+//           if(w_days.equals("Saturday ")){
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);  
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//           if(w_days.equals("Sunday ")){
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);  
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(true);
+//                    
+//           }
+//           
+//           
+//           
+//           
+//           
+//           
+//           if(w_days.equals("Monday Tuesday Wednesday Thursday Friday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(true);  
+//               chk_friday.setSelected(true);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(true);  
+//               chk_friday.setSelected(true);
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(false);
+//                    
+//           }
+//            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday Sunday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(true);  
+//               chk_friday.setSelected(true);
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//                    
+//           }
+//            
+//           if(w_days.equals("Monday Tuesday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true); 
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//           }
+//           if(w_days.equals("Monday Tuesday Wednesday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true); 
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//           }
+//            if(w_days.equals("Monday Tuesday Saturday Sunday ")){
+//                chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//           }
+//            if(w_days.equals("Monday Tuesday Friday Saturday Sunday ")){
+//                chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(true);
+//           }
+//             if(w_days.equals("Monday Tuesday Thursday Friday ")){
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(true);
+//               chk_friday.setSelected(true);
+//               chk_thursday.setSelected(true);
+//               chk_saturday.setSelected(false);
+//               chk_sunday.setSelected(false);
+//               chk_wednesday.setSelected(false);
+//               
+//           }
+//           
+//           if(w_days.equals("Monday Saturday Sunday ")){
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_monday.setSelected(true);
+//               chk_tuesday.setSelected(false); 
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//           }
+//           if(w_days.equals("Tuesday Saturday Sunday ")){
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(true); 
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//           }
+//           if(w_days.equals("Wednesday Saturday Sunday ")){
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false); 
+//               chk_wednesday.setSelected(true);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//           }
+//           if(w_days.equals("Thursday Saturday Sunday ")){
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false); 
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(true);
+//               chk_friday.setSelected(false);
+//           }
+//           if(w_days.equals("Friday Saturday Sunday ")){
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false); 
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(true);
+//           }
+//           if(w_days.equals("Saturday Sunday ")){
+//               chk_saturday.setSelected(true);
+//               chk_sunday.setSelected(true);
+//               chk_monday.setSelected(false);
+//               chk_tuesday.setSelected(false); 
+//               chk_wednesday.setSelected(false);
+//               chk_thursday.setSelected(false);
+//               chk_friday.setSelected(false);
+//           }
 
          
         jSpinner_W_time.setValue(Integer.valueOf(model.getValueAt(i, 3).toString()));
 
 
 
-// } catch (Exception e) {
-//             e.printStackTrace();
-//             
-//        }
+
 
 
 
