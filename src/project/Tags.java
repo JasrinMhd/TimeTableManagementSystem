@@ -99,6 +99,7 @@ public class Tags extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(50, 50, 50, 50));
         setLocation(new java.awt.Point(50, 300));
         setMaximizedBounds(new java.awt.Rectangle(50, 50, 300, 200));
+        setUndecorated(true);
 
         nb.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -134,9 +135,9 @@ public class Tags extends javax.swing.JFrame {
             }
         });
 
-        tag.setBackground(new java.awt.Color(0, 0, 204));
+        tag.setBackground(new java.awt.Color(153, 153, 153));
         tag.setText("Tags");
-        tag.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 204), 3));
+        tag.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         tag.setPreferredSize(new java.awt.Dimension(131, 30));
         tag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,11 +169,16 @@ public class Tags extends javax.swing.JFrame {
             }
         });
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/logout.png"))); // NOI18N
-        logout.setText("LOGOUT");
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/shutdown (1).png"))); // NOI18N
+        logout.setText("Exit");
         logout.setAutoscrolls(true);
+        logout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 4, true));
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         stat.setText("Statistics");
         stat.addActionListener(new java.awt.event.ActionListener() {
@@ -854,6 +860,14 @@ public class Tags extends javax.swing.JFrame {
         genTime.show();
         dispose();
     }//GEN-LAST:event_generateActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+         int g = JOptionPane.showConfirmDialog(null, "Do you really want to close the application?","Select",JOptionPane.YES_NO_OPTION);
+        if(g==0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments

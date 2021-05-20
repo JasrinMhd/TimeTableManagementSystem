@@ -380,6 +380,7 @@ public class AddLocation extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         nb.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -393,20 +394,47 @@ public class AddLocation extends javax.swing.JFrame {
 
         lecture.setText("Lectures");
         lecture.setPreferredSize(new java.awt.Dimension(131, 30));
+        lecture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lectureActionPerformed(evt);
+            }
+        });
 
         student.setText("Students");
         student.setPreferredSize(new java.awt.Dimension(131, 30));
+        student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentActionPerformed(evt);
+            }
+        });
 
         subject.setText("Subjects");
         subject.setPreferredSize(new java.awt.Dimension(131, 30));
+        subject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subjectActionPerformed(evt);
+            }
+        });
 
         tag.setText("Tags");
         tag.setPreferredSize(new java.awt.Dimension(131, 30));
+        tag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tagActionPerformed(evt);
+            }
+        });
 
         session.setText("Sessions");
         session.setPreferredSize(new java.awt.Dimension(131, 30));
+        session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sessionActionPerformed(evt);
+            }
+        });
 
+        location.setBackground(new java.awt.Color(153, 153, 153));
         location.setText("Locations");
+        location.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         location.setPreferredSize(new java.awt.Dimension(131, 30));
         location.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -416,12 +444,22 @@ public class AddLocation extends javax.swing.JFrame {
 
         generate.setText("Generate Timetable");
         generate.setPreferredSize(new java.awt.Dimension(131, 30));
+        generate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateActionPerformed(evt);
+            }
+        });
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/logout.png"))); // NOI18N
-        logout.setText("LOGOUT");
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/shutdown (1).png"))); // NOI18N
+        logout.setText("Exit");
         logout.setAutoscrolls(true);
+        logout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 4, true));
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         stat.setText("Statistics");
         stat.addActionListener(new java.awt.event.ActionListener() {
@@ -1194,7 +1232,9 @@ public class AddLocation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void WDHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WDHActionPerformed
-     
+        workingDaysHours working_DaysHours = new workingDaysHours();
+        working_DaysHours.show();
+        dispose();
         
         
         
@@ -1206,7 +1246,9 @@ public class AddLocation extends javax.swing.JFrame {
 
     private void statActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statActionPerformed
         
-        new Statistics().setVisible(true);  
+        Statistics stats = new Statistics();
+        stats.show();
+        dispose(); 
     }//GEN-LAST:event_statActionPerformed
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
@@ -1476,6 +1518,11 @@ public class AddLocation extends javax.swing.JFrame {
             pst.executeUpdate();
 
             JOptionPane.showMessageDialog(this, "Successfully added!!!");
+            
+            chkBoxRoom.setSelectedIndex(0);
+        chkBoxDay.setSelectedIndex(0);
+        txt_sTime.setText("");
+        txt_eTime.setText("");
 
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -1710,6 +1757,56 @@ public class AddLocation extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_consecutiveTableMouseClicked
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        int g = JOptionPane.showConfirmDialog(null, "Do you really want to close the application?","Select",JOptionPane.YES_NO_OPTION);
+        if(g==0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lectureActionPerformed
+        // TODO add your handling code here:
+        lecture Lecture = new lecture();
+       Lecture.show();
+       dispose();
+    }//GEN-LAST:event_lectureActionPerformed
+
+    private void studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentActionPerformed
+        // TODO add your handling code here:
+         Students stud = new Students();
+       stud.show();
+       dispose();
+    }//GEN-LAST:event_studentActionPerformed
+
+    private void subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectActionPerformed
+        // TODO add your handling code here:
+         subject Subject = new subject();
+       Subject.show();
+       dispose();
+    }//GEN-LAST:event_subjectActionPerformed
+
+    private void tagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tagActionPerformed
+        // TODO add your handling code here:
+        Tags tags = new Tags();
+        tags.show();
+        dispose();
+    }//GEN-LAST:event_tagActionPerformed
+
+    private void sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sessionActionPerformed
+        // TODO add your handling code here:
+        sessions Session = new sessions();
+        Session.show();
+        dispose();
+    }//GEN-LAST:event_sessionActionPerformed
+
+    private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
+        // TODO add your handling code here:
+        generateTimetable genTime = new generateTimetable();
+        genTime.show();
+        dispose();
+    }//GEN-LAST:event_generateActionPerformed
 
     /**4
      * @param args the command line arguments

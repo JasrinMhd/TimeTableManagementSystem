@@ -5,6 +5,8 @@
  */
 package project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jahran
@@ -48,6 +50,7 @@ public class homePage extends javax.swing.JFrame {
         contnt = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         nb.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -115,11 +118,16 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/logout.png"))); // NOI18N
-        logout.setText("LOGOUT");
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/shutdown (1).png"))); // NOI18N
+        logout.setText("Exit");
         logout.setAutoscrolls(true);
+        logout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 51), 4, true));
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         stat.setText("Statistics");
         stat.addActionListener(new java.awt.event.ActionListener() {
@@ -330,6 +338,14 @@ public class homePage extends javax.swing.JFrame {
         genTime.show();
         dispose();
     }//GEN-LAST:event_generateActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        int g = JOptionPane.showConfirmDialog(null, "Do you really want to close the application?","Select",JOptionPane.YES_NO_OPTION);
+        if(g==0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,8 @@
  */
 package project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jahran
@@ -52,6 +54,7 @@ public class generateTimetable extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         nb.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -111,14 +114,21 @@ public class generateTimetable extends javax.swing.JFrame {
             }
         });
 
+        generate.setBackground(new java.awt.Color(153, 153, 153));
         generate.setText("Generate Timetable");
+        generate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         generate.setPreferredSize(new java.awt.Dimension(131, 30));
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/logout.png"))); // NOI18N
-        logout.setText("LOGOUT");
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/shutdown (1).png"))); // NOI18N
+        logout.setText("Exit");
         logout.setAutoscrolls(true);
+        logout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 4, true));
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         stat.setText("Statistics");
         stat.addActionListener(new java.awt.event.ActionListener() {
@@ -366,6 +376,14 @@ public class generateTimetable extends javax.swing.JFrame {
         stats.show();
         dispose();
     }//GEN-LAST:event_statActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+         int g = JOptionPane.showConfirmDialog(null, "Do you really want to close the application?","Select",JOptionPane.YES_NO_OPTION);
+        if(g==0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments

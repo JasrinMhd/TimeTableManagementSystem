@@ -121,6 +121,7 @@ public class Students extends javax.swing.JFrame {
         setTitle("Victory Institute - Student Groups");
         setBounds(new java.awt.Rectangle(50, 50, 50, 50));
         setLocation(new java.awt.Point(50, 300));
+        setUndecorated(true);
 
         nb.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -140,9 +141,9 @@ public class Students extends javax.swing.JFrame {
             }
         });
 
-        student.setBackground(new java.awt.Color(51, 0, 204));
+        student.setBackground(new java.awt.Color(153, 153, 153));
         student.setText("Students");
-        student.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 204), 3));
+        student.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         student.setPreferredSize(new java.awt.Dimension(131, 30));
         student.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,11 +191,11 @@ public class Students extends javax.swing.JFrame {
             }
         });
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/logout.png"))); // NOI18N
-        logout.setText("LOGOUT");
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/shutdown (1).png"))); // NOI18N
+        logout.setText("Exit");
         logout.setAutoscrolls(true);
+        logout.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 4, true));
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
@@ -1139,6 +1140,10 @@ public class Students extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
+         int g = JOptionPane.showConfirmDialog(null, "Do you really want to close the application?","Select",JOptionPane.YES_NO_OPTION);
+        if(g==0){
+            System.exit(0);
+        }
     }//GEN-LAST:event_logoutActionPerformed
 
     private void EditGroupIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditGroupIDFieldActionPerformed
