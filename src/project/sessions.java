@@ -406,6 +406,7 @@ public class sessions extends javax.swing.JFrame {
         conseSessionShowTable = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        errorMsg1 = new javax.swing.JLabel();
         contnt2 = new javax.swing.JPanel();
         id2 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -427,6 +428,7 @@ public class sessions extends javax.swing.JFrame {
         NonSessionShowTable = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        errorMsg2 = new javax.swing.JLabel();
         contnt3 = new javax.swing.JPanel();
         id3 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -448,6 +450,7 @@ public class sessions extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         ParallelSessionShowTable = new javax.swing.JTable();
         jButton10 = new javax.swing.JButton();
+        errorMsg3 = new javax.swing.JLabel();
         contnt4 = new javax.swing.JPanel();
         id4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -866,6 +869,12 @@ public class sessions extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ConseCombo1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ConseCombo1MouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ConseCombo1MousePressed(evt);
+            }
         });
         ConseCombo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -876,11 +885,19 @@ public class sessions extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 ConseCombo1KeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ConseCombo1KeyReleased(evt);
+            }
         });
 
         selectedconse1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectedconse1ActionPerformed(evt);
+            }
+        });
+        selectedconse1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                selectedconse1KeyReleased(evt);
             }
         });
 
@@ -898,6 +915,12 @@ public class sessions extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ConseCombo2MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ConseCombo2MouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ConseCombo2MousePressed(evt);
+            }
         });
         ConseCombo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -908,11 +931,19 @@ public class sessions extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 ConseCombo2KeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ConseCombo2KeyReleased(evt);
+            }
         });
 
         selectedconse2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectedconse2ActionPerformed(evt);
+            }
+        });
+        selectedconse2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                selectedconse2KeyReleased(evt);
             }
         });
 
@@ -943,6 +974,9 @@ public class sessions extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
+
+        errorMsg1.setForeground(new java.awt.Color(204, 0, 0));
+        errorMsg1.setText(" ");
 
         javax.swing.GroupLayout contnt1Layout = new javax.swing.GroupLayout(contnt1);
         contnt1.setLayout(contnt1Layout);
@@ -980,7 +1014,10 @@ public class sessions extends javax.swing.JFrame {
                                                 .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(contnt1Layout.createSequentialGroup()
+                                        .addGap(307, 307, 307)
+                                        .addComponent(errorMsg1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(id1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(contnt1Layout.createSequentialGroup()
@@ -1003,7 +1040,9 @@ public class sessions extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(errorMsg1))
                 .addGap(4, 4, 4)
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConseCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1061,6 +1100,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel31.setText("Select your 1st Session ID");
 
+        nonCombo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nonCombo1MousePressed(evt);
+            }
+        });
         nonCombo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nonCombo1ActionPerformed(evt);
@@ -1069,6 +1113,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel32.setText("Select your 2nd Session ID");
 
+        nonCombo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nonCombo2MousePressed(evt);
+            }
+        });
         nonCombo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nonCombo2ActionPerformed(evt);
@@ -1077,6 +1126,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel33.setText("Select your 3rd Session ID");
 
+        nonCombo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nonCombo3MousePressed(evt);
+            }
+        });
         nonCombo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nonCombo3ActionPerformed(evt);
@@ -1111,6 +1165,9 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        errorMsg2.setForeground(new java.awt.Color(204, 0, 0));
+        errorMsg2.setText("  ");
+
         javax.swing.GroupLayout contnt2Layout = new javax.swing.GroupLayout(contnt2);
         contnt2.setLayout(contnt2Layout);
         contnt2Layout.setHorizontalGroup(
@@ -1133,7 +1190,6 @@ public class sessions extends javax.swing.JFrame {
                     .addGroup(contnt2Layout.createSequentialGroup()
                         .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(contnt2Layout.createSequentialGroup()
                                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1151,11 +1207,18 @@ public class sessions extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(contnt2Layout.createSequentialGroup()
-                                        .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt2Layout.createSequentialGroup()
+                                                .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18))
+                                            .addGroup(contnt2Layout.createSequentialGroup()
+                                                .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)))
+                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(errorMsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 38, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1179,7 +1242,8 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nonCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(errorMsg2))
                 .addGap(18, 18, 18)
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1233,6 +1297,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel37.setText("Select your 2nd Session ID");
 
+        parallelCombo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                parallelCombo1MousePressed(evt);
+            }
+        });
         parallelCombo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 parallelCombo1ActionPerformed(evt);
@@ -1241,6 +1310,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel38.setText("Select your 1st Session ID");
 
+        parallelCombo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                parallelCombo2MousePressed(evt);
+            }
+        });
         parallelCombo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 parallelCombo2ActionPerformed(evt);
@@ -1255,6 +1329,11 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel39.setText("Select your 3rd Session ID");
 
+        parallelCombo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                parallelCombo3MousePressed(evt);
+            }
+        });
         parallelCombo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 parallelCombo3ActionPerformed(evt);
@@ -1295,6 +1374,9 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        errorMsg3.setForeground(new java.awt.Color(204, 0, 0));
+        errorMsg3.setText(" ");
+
         javax.swing.GroupLayout contnt3Layout = new javax.swing.GroupLayout(contnt3);
         contnt3.setLayout(contnt3Layout);
         contnt3Layout.setHorizontalGroup(
@@ -1331,7 +1413,11 @@ public class sessions extends javax.swing.JFrame {
                                     .addComponent(parallelCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(52, 52, 52)
                             .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(selectedParallel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(contnt3Layout.createSequentialGroup()
+                                    .addComponent(selectedParallel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(32, 32, 32)
+                                    .addComponent(errorMsg3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt3Layout.createSequentialGroup()
                                     .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(selectedParallel3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1365,7 +1451,8 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(parallelCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(selectedParallel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(errorMsg3))
                 .addGap(18, 18, 18)
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2294,8 +2381,7 @@ public class sessions extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnDeleteNATActionPerformed
 
     private void ConseCombo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo1MouseClicked
-        //    String SelecetedConse = (String) ConseCombo1.getSelectedItem();
-        //    ChooseConseList5.setText(SelecetedConse);
+       //errorMsg1.setText("");
     }//GEN-LAST:event_ConseCombo1MouseClicked
 
     private void ConseCombo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConseCombo1ActionPerformed
@@ -2334,7 +2420,7 @@ public class sessions extends javax.swing.JFrame {
     }//GEN-LAST:event_selectedconse1ActionPerformed
 
     private void ConseCombo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo2MouseClicked
-        // TODO add your handling code here:
+        //errorMsg1.setText("");
     }//GEN-LAST:event_ConseCombo2MouseClicked
 
     private void ConseCombo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConseCombo2ActionPerformed
@@ -2351,7 +2437,12 @@ public class sessions extends javax.swing.JFrame {
     }//GEN-LAST:event_selectedconse2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        try{
+     if(selectedconse1.getText().trim().isEmpty() ||  selectedconse2.getText().trim().isEmpty()){
+            errorMsg1.setText("Please fill all the details ");
+        }
+        else{
+        
+           try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
@@ -2364,6 +2455,7 @@ public class sessions extends javax.swing.JFrame {
 
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Consecutive Sessions details added Successfully");
+            errorMsg1.setText("");
             conn.close();
 
         }catch (Exception e){
@@ -2392,7 +2484,7 @@ public class sessions extends javax.swing.JFrame {
         ConseCombo2.setSelectedIndex(0);
         selectedconse1.setText("");
         selectedconse2.setText("");
-
+     }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void nonOverlapTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonOverlapTableMouseClicked
@@ -2809,7 +2901,13 @@ public class sessions extends javax.swing.JFrame {
     }//GEN-LAST:event_nonCombo3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-         try{
+    if(selectedNon1.getText().trim().isEmpty() ||  selectedNon2.getText().trim().isEmpty() ||  selectedNon3.getText().trim().isEmpty()){
+            errorMsg2.setText("Please fill all details ");
+        }
+        else{    
+        
+        
+        try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
 
@@ -2853,9 +2951,17 @@ public class sessions extends javax.swing.JFrame {
         selectedNon1.setText("");
         selectedNon2.setText("");
         selectedNon3.setText("");
+        
+      }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    if(selectedParallel1.getText().trim().isEmpty() ||  selectedParallel2.getText().trim().isEmpty() ||  selectedParallel3.getText().trim().isEmpty()){
+            errorMsg3.setText("Please fill all details ");
+        }
+        else{ 
+        
+        
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
@@ -2900,6 +3006,8 @@ public class sessions extends javax.swing.JFrame {
         selectedParallel1.setText("");
         selectedParallel2.setText("");
         selectedParallel3.setText("");
+        
+      }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -2913,17 +3021,15 @@ public class sessions extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         selectedconse1.setText("");
         selectedconse2.setText("");
-        ConseCombo1.setSelectedIndex(0);
-        ConseCombo2.setSelectedIndex(0);
+        errorMsg1.setText("");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         selectedNon1.setText("");
         selectedNon2.setText("");
         selectedNon3.setText("");
-        nonCombo1.setSelectedIndex(0);
-        nonCombo2.setSelectedIndex(0);
-        nonCombo3.setSelectedIndex(0);
+        errorMsg2.setText("");
+        
         
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -2931,11 +3037,65 @@ public class sessions extends javax.swing.JFrame {
         selectedParallel1.setText("");
         selectedParallel2.setText("");
         selectedParallel3.setText("");
-        parallelCombo1.setSelectedIndex(0);
-        parallelCombo2.setSelectedIndex(0);
-        parallelCombo3.setSelectedIndex(0);
+        errorMsg3.setText("");
         
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void ConseCombo1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConseCombo1KeyReleased
+        //errorMsg1.setText("");
+    }//GEN-LAST:event_ConseCombo1KeyReleased
+
+    private void ConseCombo2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConseCombo2KeyReleased
+       // errorMsg1.setText("");
+    }//GEN-LAST:event_ConseCombo2KeyReleased
+
+    private void selectedconse1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_selectedconse1KeyReleased
+       // errorMsg1.setText("");
+    }//GEN-LAST:event_selectedconse1KeyReleased
+
+    private void selectedconse2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_selectedconse2KeyReleased
+        //errorMsg1.setText("");
+    }//GEN-LAST:event_selectedconse2KeyReleased
+
+    private void ConseCombo1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo1MouseEntered
+        //errorMsg1.setText("");
+    }//GEN-LAST:event_ConseCombo1MouseEntered
+
+    private void ConseCombo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo1MousePressed
+        errorMsg1.setText("");
+    }//GEN-LAST:event_ConseCombo1MousePressed
+
+    private void ConseCombo2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConseCombo2MouseEntered
+
+    private void ConseCombo2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConseCombo2MousePressed
+        errorMsg1.setText("");
+    }//GEN-LAST:event_ConseCombo2MousePressed
+
+    private void nonCombo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonCombo1MousePressed
+        errorMsg2.setText("");
+    }//GEN-LAST:event_nonCombo1MousePressed
+
+    private void nonCombo2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonCombo2MousePressed
+        errorMsg2.setText("");
+    }//GEN-LAST:event_nonCombo2MousePressed
+
+    private void nonCombo3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonCombo3MousePressed
+        errorMsg2.setText("");
+    }//GEN-LAST:event_nonCombo3MousePressed
+
+    private void parallelCombo1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_parallelCombo1MousePressed
+        errorMsg3.setText("");
+    }//GEN-LAST:event_parallelCombo1MousePressed
+
+    private void parallelCombo2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_parallelCombo2MousePressed
+        errorMsg3.setText("");
+    }//GEN-LAST:event_parallelCombo2MousePressed
+
+    private void parallelCombo3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_parallelCombo3MousePressed
+        errorMsg3.setText("");
+    }//GEN-LAST:event_parallelCombo3MousePressed
 
     private void roomComboBox(){
          try{
@@ -3097,6 +3257,9 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JPanel contnt3;
     private javax.swing.JPanel contnt4;
     private javax.swing.JPanel contnt5;
+    private javax.swing.JLabel errorMsg1;
+    private javax.swing.JLabel errorMsg2;
+    private javax.swing.JLabel errorMsg3;
     private javax.swing.JButton generate;
     private javax.swing.JPanel heading;
     private javax.swing.JLabel id;
