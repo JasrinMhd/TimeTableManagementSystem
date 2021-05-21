@@ -657,6 +657,8 @@ public class sessions extends javax.swing.JFrame {
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
+        contnt.setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel2.setText("Select Lecture");
 
         jLabel3.setText("Subject code");
@@ -729,7 +731,7 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setBackground(new java.awt.Color(0, 0, 153));
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 51, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -838,11 +840,14 @@ public class sessions extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Manage Sessions", contnt);
 
+        contnt1.setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 102, 255));
         jLabel24.setText("See all the Sessions here ");
         jLabel24.setPreferredSize(new java.awt.Dimension(170, 50));
 
+        consecutiveTable.setForeground(new java.awt.Color(0, 0, 153));
         consecutiveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -901,6 +906,8 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        refresh1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        refresh1.setForeground(new java.awt.Color(0, 204, 0));
         refresh1.setText("Refresh");
         refresh1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, java.awt.SystemColor.activeCaption));
         refresh1.addActionListener(new java.awt.event.ActionListener() {
@@ -951,6 +958,7 @@ public class sessions extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(0, 102, 255));
         jLabel28.setText("View Consecutive Sessions");
 
+        conseSessionShowTable.setForeground(new java.awt.Color(0, 0, 153));
         conseSessionShowTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -961,6 +969,8 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(conseSessionShowTable);
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 51, 204));
         jButton5.setText("Add Consecutive Session");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -968,6 +978,8 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(0, 51, 204));
         jButton8.setText("clear");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -993,7 +1005,7 @@ public class sessions extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(contnt1Layout.createSequentialGroup()
                         .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contnt1Layout.createSequentialGroup()
+                            .addGroup(contnt1Layout.createSequentialGroup()
                                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(contnt1Layout.createSequentialGroup()
                                         .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1023,7 +1035,7 @@ public class sessions extends javax.swing.JFrame {
                             .addGroup(contnt1Layout.createSequentialGroup()
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(300, 300, 300))))
         );
         contnt1Layout.setVerticalGroup(
@@ -1032,12 +1044,11 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contnt1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(contnt1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1068,10 +1079,13 @@ public class sessions extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consecutive Sessions", contnt1);
 
+        contnt2.setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel29.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 102, 255));
         jLabel29.setText("See all the Sessions here  ");
 
+        nonOverlapTable.setForeground(new java.awt.Color(0, 0, 204));
         nonOverlapTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1087,6 +1101,8 @@ public class sessions extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(nonOverlapTable);
 
+        refresh2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        refresh2.setForeground(new java.awt.Color(0, 204, 0));
         refresh2.setText("Refresh");
         refresh2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1141,6 +1157,7 @@ public class sessions extends javax.swing.JFrame {
         jLabel34.setForeground(new java.awt.Color(0, 102, 255));
         jLabel34.setText("View Non-Overlap Sessions");
 
+        NonSessionShowTable.setForeground(new java.awt.Color(0, 0, 153));
         NonSessionShowTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1151,6 +1168,8 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(NonSessionShowTable);
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 51, 204));
         jButton6.setText("Add Non-Overlap  Session");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1158,6 +1177,8 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(0, 51, 204));
         jButton9.setText("clear");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1181,8 +1202,8 @@ public class sessions extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(refresh2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(refresh2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 37, Short.MAX_VALUE))
             .addGroup(contnt2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1265,10 +1286,13 @@ public class sessions extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Non Overlapping Sessions", contnt2);
 
+        contnt3.setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel35.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 102, 255));
         jLabel35.setText("See all the Sessions here  ");
 
+        parallelTable.setForeground(new java.awt.Color(0, 0, 204));
         parallelTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1284,6 +1308,8 @@ public class sessions extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(parallelTable);
 
+        refresh3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        refresh3.setForeground(new java.awt.Color(51, 204, 0));
         refresh3.setText("Refresh");
         refresh3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1346,6 +1372,8 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(0, 51, 204));
         jButton7.setText("Add Parallel Session");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1357,6 +1385,7 @@ public class sessions extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(0, 102, 255));
         jLabel40.setText("View Parallel Sessions");
 
+        ParallelSessionShowTable.setForeground(new java.awt.Color(0, 0, 153));
         ParallelSessionShowTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1367,6 +1396,8 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(ParallelSessionShowTable);
 
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(0, 51, 204));
         jButton10.setText("clear");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1389,9 +1420,9 @@ public class sessions extends javax.swing.JFrame {
                     .addGroup(contnt3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(refresh3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(refresh3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 34, Short.MAX_VALUE))
             .addGroup(contnt3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1473,6 +1504,8 @@ public class sessions extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab(" Parallel Sessions", contnt3);
+
+        contnt4.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel11.setText("Select Room");
@@ -1587,6 +1620,8 @@ public class sessions extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Preferred Session", contnt4);
+
+        contnt5.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel15.setText("Select Lecturer");
 
