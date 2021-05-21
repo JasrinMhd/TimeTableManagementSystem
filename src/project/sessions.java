@@ -59,7 +59,7 @@ public class sessions extends javax.swing.JFrame {
         lecCombobox();
         tagCombobox();
         subCombobox();
-        
+        SrcGroupCombobox();
         roomComboBox();
       
         table_update();
@@ -247,6 +247,25 @@ public class sessions extends javax.swing.JFrame {
        }catch(Exception e){
         }
     }
+      private void SrcGroupCombobox(){
+         try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
+            
+            String sql = "select * from student";
+            
+            
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+             while(rs.next()){
+                jGroupSrc.addItem(rs.getString("GroupID"));
+                jGroupSrc.addItem(rs.getString("SubGroupID"));
+
+             }
+         }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+     }
     private void  updateParallelCombo3(){
         
         try{Class.forName("com.mysql.jdbc.Driver");
@@ -1931,6 +1950,7 @@ public class sessions extends javax.swing.JFrame {
             ResultSet rs = pst.executeQuery();
              while(rs.next()){
                  jLecture.addItem(rs.getString("Name"));
+                  jLectureSrc.addItem(rs.getString("Name"));
              }
            
             
