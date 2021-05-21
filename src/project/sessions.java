@@ -405,6 +405,7 @@ public class sessions extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         conseSessionShowTable = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         contnt2 = new javax.swing.JPanel();
         id2 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -425,6 +426,7 @@ public class sessions extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         NonSessionShowTable = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         contnt3 = new javax.swing.JPanel();
         id3 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -445,6 +447,7 @@ public class sessions extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         ParallelSessionShowTable = new javax.swing.JTable();
+        jButton10 = new javax.swing.JButton();
         contnt4 = new javax.swing.JPanel();
         id4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -934,6 +937,13 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setText("clear");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout contnt1Layout = new javax.swing.GroupLayout(contnt1);
         contnt1.setLayout(contnt1Layout);
         contnt1Layout.setHorizontalGroup(
@@ -967,7 +977,9 @@ public class sessions extends javax.swing.JFrame {
                                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(contnt1Layout.createSequentialGroup()
                                                 .addGap(19, 19, 19)
-                                                .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(id1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -996,7 +1008,8 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ConseCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8))
                 .addGap(18, 18, 18)
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1091,6 +1104,13 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        jButton9.setText("clear");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout contnt2Layout = new javax.swing.GroupLayout(contnt2);
         contnt2.setLayout(contnt2Layout);
         contnt2Layout.setHorizontalGroup(
@@ -1130,7 +1150,10 @@ public class sessions extends javax.swing.JFrame {
                                         .addComponent(selectedNon3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(contnt2Layout.createSequentialGroup()
+                                        .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 38, Short.MAX_VALUE)))
@@ -1161,7 +1184,8 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nonCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1264,6 +1288,13 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(ParallelSessionShowTable);
 
+        jButton10.setText("clear");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout contnt3Layout = new javax.swing.GroupLayout(contnt3);
         contnt3.setLayout(contnt3Layout);
         contnt3Layout.setHorizontalGroup(
@@ -1300,12 +1331,15 @@ public class sessions extends javax.swing.JFrame {
                                     .addComponent(parallelCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(52, 52, 52)
                             .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(selectedParallel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(contnt3Layout.createSequentialGroup()
-                                    .addComponent(selectedParallel3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt3Layout.createSequentialGroup()
+                                    .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(selectedParallel3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1336,7 +1370,8 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(parallelCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10))
                 .addGap(18, 18, 18)
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2875,6 +2910,33 @@ public class sessions extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_logoutActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        selectedconse1.setText("");
+        selectedconse2.setText("");
+        ConseCombo1.setSelectedIndex(0);
+        ConseCombo2.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        selectedNon1.setText("");
+        selectedNon2.setText("");
+        selectedNon3.setText("");
+        nonCombo1.setSelectedIndex(0);
+        nonCombo2.setSelectedIndex(0);
+        nonCombo3.setSelectedIndex(0);
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        selectedParallel1.setText("");
+        selectedParallel2.setText("");
+        selectedParallel3.setText("");
+        parallelCombo1.setSelectedIndex(0);
+        parallelCombo2.setSelectedIndex(0);
+        parallelCombo3.setSelectedIndex(0);
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     private void roomComboBox(){
          try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -3044,12 +3106,15 @@ public class sessions extends javax.swing.JFrame {
     private javax.swing.JLabel id4;
     private javax.swing.JLabel id5;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JTextField jDura;
     private javax.swing.JComboBox<String> jGroup;
     private javax.swing.JLabel jLabel1;

@@ -705,6 +705,8 @@
                                                       <Group type="102" alignment="0" attributes="0">
                                                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                                           <Component id="selectedconse1" min="-2" pref="80" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="jButton8" min="-2" pref="67" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -748,6 +750,7 @@
                               <Component id="ConseCombo1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="selectedconse1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jLabel27" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -980,6 +983,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="jButton8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="clear"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="contnt2">
@@ -1036,7 +1047,11 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="jButton6" min="-2" pref="173" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="selectedNon2" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="selectedNon2" min="-2" pref="96" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="jButton9" min="-2" pref="73" max="-2" attributes="0"/>
+                                              </Group>
                                               <Component id="selectedNon1" min="-2" pref="96" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1079,6 +1094,7 @@
                               <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="nonCombo2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="selectedNon2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1262,6 +1278,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="jButton9">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="clear"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="contnt3">
@@ -1316,12 +1340,17 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="selectedParallel2" min="-2" pref="99" max="-2" attributes="0"/>
                                           <Component id="selectedParallel1" min="-2" pref="99" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="selectedParallel3" min="-2" pref="99" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jButton7" min="-2" pref="146" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="selectedParallel3" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                                                  <Component id="selectedParallel2" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="58" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jButton10" min="-2" pref="79" max="-2" attributes="0"/>
+                                                  <Component id="jButton7" min="-2" pref="146" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -1364,6 +1393,7 @@
                               <Component id="jLabel37" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="parallelCombo2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="selectedParallel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1553,6 +1583,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="jButton10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="clear"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="contnt4">
