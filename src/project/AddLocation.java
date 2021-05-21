@@ -320,6 +320,7 @@ public class AddLocation extends javax.swing.JFrame {
         SaveBtn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         DeleteLocBtn = new javax.swing.JButton();
+        valid = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -566,6 +567,12 @@ public class AddLocation extends javax.swing.JFrame {
 
         jLabel3.setText("Building Name ");
 
+        building.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                buildingKeyReleased(evt);
+            }
+        });
+
         locTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -585,6 +592,12 @@ public class AddLocation extends javax.swing.JFrame {
         jLabel5.setText("Room Type");
 
         jLabel4.setText("Room Name");
+
+        room.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                roomKeyReleased(evt);
+            }
+        });
 
         roomType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "lecture Hall", "laboratory" }));
 
@@ -617,34 +630,43 @@ public class AddLocation extends javax.swing.JFrame {
             }
         });
 
+        valid.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        valid.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(roomType, 0, 130, Short.MAX_VALUE)
+                                    .addComponent(cap)
+                                    .addComponent(room)
+                                    .addComponent(building))))
+                        .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SaveBtn)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(roomType, 0, 130, Short.MAX_VALUE)
-                                .addComponent(cap)
-                                .addComponent(room)
-                                .addComponent(building)))))
-                .addGap(23, 23, 23)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(valid, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(93, 93, 93))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(379, 379, 379)
+                .addGap(152, 152, 152)
+                .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(154, 154, 154)
                 .addComponent(jButton2)
                 .addGap(129, 129, 129)
                 .addComponent(DeleteLocBtn)
@@ -673,15 +695,16 @@ public class AddLocation extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
-                        .addGap(41, 41, 41)
-                        .addComponent(SaveBtn))
+                        .addGap(40, 40, 40)
+                        .addComponent(valid, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(DeleteLocBtn))
+                    .addComponent(DeleteLocBtn)
+                    .addComponent(SaveBtn))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
@@ -1265,14 +1288,14 @@ public class AddLocation extends javax.swing.JFrame {
 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
         if(building.getText().trim().isEmpty() && room.getText().trim().isEmpty()){
-            jLabel7.setText("Building Name is Mandotory");
-            jLabel8.setText("Room Name is Mandotory");
+            valid.setText("** Fields are Empty **");
+            
         }
         else if(building.getText().trim().isEmpty()){
-           jLabel7.setText("Building Name is Mandotory");
+           valid.setText("Building Name is Mandotory");
         }
         else if(room.getText().trim().isEmpty()){
-           jLabel8.setText("Room Name is Mandotory");
+           valid.setText("Room Name is Mandotory");
         }
         else
 
@@ -1876,6 +1899,16 @@ public class AddLocation extends javax.swing.JFrame {
         
     }//GEN-LAST:event_refreshActionPerformed
 
+    private void buildingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buildingKeyReleased
+        // TODO add your handling code here:
+        valid.setText("");
+    }//GEN-LAST:event_buildingKeyReleased
+
+    private void roomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_roomKeyReleased
+        // TODO add your handling code here:
+        valid.setText("");
+    }//GEN-LAST:event_roomKeyReleased
+
     /**4
      * @param args the command line arguments
      */
@@ -2012,5 +2045,6 @@ public class AddLocation extends javax.swing.JFrame {
     private javax.swing.JButton tag;
     private javax.swing.JTextField txt_eTime;
     private javax.swing.JTextField txt_sTime;
+    private javax.swing.JLabel valid;
     // End of variables declaration//GEN-END:variables
 }
