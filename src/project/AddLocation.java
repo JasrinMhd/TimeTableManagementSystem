@@ -70,7 +70,7 @@ public class AddLocation extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/timetablesystem","root","");
             
-            String sql = "select * from consecutiveRoomsession";
+            String sql = "select * from consecutiveroomsession";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             
@@ -1714,8 +1714,8 @@ public class AddLocation extends javax.swing.JFrame {
             String sql = "insert into consecutiveroomsession(ciD,sesID1,sesID2,room) values (?,?,?,?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, jTextField11.getText());
-            pst.setString(2, jTextField9.getText());
-            pst.setString(3, jTextField10.getText());
+            pst.setString(2, jTextField10.getText());
+            pst.setString(3, jTextField12.getText());
 
             pst.setString(4, selectRoom.getText());
 
@@ -1723,8 +1723,8 @@ public class AddLocation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "insertion successful");
 
             jTextField11.setText("");
-            jTextField9.setText("");
             jTextField10.setText("");
+            jTextField12.setText("");
 
             selectRoom.setText("");
 
