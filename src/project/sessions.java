@@ -2539,7 +2539,7 @@ public class sessions extends javax.swing.JFrame {
             tm.setRowCount(0);
 
             while (rs.next()){
-                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
+                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("lecture2"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
                 tm.addRow(o);
             }
 
@@ -2778,7 +2778,7 @@ public class sessions extends javax.swing.JFrame {
             tm.setRowCount(0);
 
             while (rs.next()){
-                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
+                Object o[] = {rs.getInt("id"),rs.getString("lecture"),rs.getString("lecture2"),rs.getString("tag"),rs.getInt("noOFStudents"),rs.getString("groupID"),rs.getString("subjectCode"),rs.getString("durationHrs")};
                 tm.addRow(o);
             }
 
