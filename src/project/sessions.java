@@ -680,6 +680,7 @@ public class sessions extends javax.swing.JFrame {
                 .addComponent(logoLab))
         );
 
+        jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 255), 1, true));
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
         contnt.setBackground(new java.awt.Color(204, 204, 255));
@@ -728,28 +729,40 @@ public class sessions extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TableSession);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         jButton1.setText("Add Session");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        jButton1.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/delete.png"))); // NOI18N
         jButton2.setText("Delete Session");
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        jButton2.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Apps-system-software-update-icon_24x24.png"))); // NOI18N
         jButton3.setText("Edit Session");
+        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        jButton3.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/update.png"))); // NOI18N
         jButton4.setText("Reset Feilds");
+        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        jButton4.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -801,55 +814,56 @@ public class sessions extends javax.swing.JFrame {
             .addGroup(contntLayout.createSequentialGroup()
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(contntLayout.createSequentialGroup()
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(77, 77, 77)
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(57, 57, 57)
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7))
-                                    .addGroup(contntLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(25, 25, 25))))
-                            .addComponent(jButton4))
-                        .addGap(21, 21, 21)
-                        .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(contntLayout.createSequentialGroup()
-                                .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel8))
-                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton2)
-                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(contntLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
                             .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(contntLayout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(98, 98, 98)
-                                .addComponent(jButton3)))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(contntLayout.createSequentialGroup()
+                            .addGap(35, 35, 35)
+                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel9))
+                            .addGap(30, 30, 30)
+                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTag, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(57, 57, 57)
+                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGroup(contntLayout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(25, 25, 25)))
+                            .addGap(21, 21, 21)
+                            .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(contntLayout.createSequentialGroup()
+                                    .addComponent(jDura, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel8))
+                                .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jGroup, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jNoStud, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(contntLayout.createSequentialGroup()
+                            .addGap(384, 384, 384)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(28, 28, 28))
             .addGroup(contntLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jLectureSrc, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jGroupSrc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -894,10 +908,10 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jLecture2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton2))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -907,7 +921,7 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jLabel41)
                     .addComponent(jLabel42))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -980,10 +994,10 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
-        refresh1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        refresh1.setForeground(new java.awt.Color(0, 204, 0));
+        refresh1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/update.png"))); // NOI18N
         refresh1.setText("Refresh");
-        refresh1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, java.awt.SystemColor.activeCaption));
+        refresh1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        refresh1.setPreferredSize(new java.awt.Dimension(69, 30));
         refresh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refresh1ActionPerformed(evt);
@@ -1044,20 +1058,22 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(conseSessionShowTable);
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 51, 204));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         jButton5.setText("Add Consecutive Session");
+        jButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(0, 51, 204));
-        jButton8.setText("clear");
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Button-Delete-icon_1_20x20.png"))); // NOI18N
+        jButton8.setText("Clear");
+        jButton8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -1094,15 +1110,15 @@ public class sessions extends javax.swing.JFrame {
                                             .addComponent(ConseCombo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(contnt1Layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(selectedconse2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(contnt1Layout.createSequentialGroup()
                                                 .addGap(19, 19, 19)
                                                 .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(contnt1Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(selectedconse2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(contnt1Layout.createSequentialGroup()
                                         .addGap(307, 307, 307)
@@ -1112,7 +1128,7 @@ public class sessions extends javax.swing.JFrame {
                             .addGroup(contnt1Layout.createSequentialGroup()
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(300, 300, 300))))
         );
         contnt1Layout.setVerticalGroup(
@@ -1121,11 +1137,12 @@ public class sessions extends javax.swing.JFrame {
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contnt1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(contnt1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(refresh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1136,7 +1153,7 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(ConseCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(selectedconse1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contnt1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1178,9 +1195,11 @@ public class sessions extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(nonOverlapTable);
 
-        refresh2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        refresh2.setForeground(new java.awt.Color(0, 204, 0));
+        refresh2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        refresh2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/update.png"))); // NOI18N
         refresh2.setText("Refresh");
+        refresh2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        refresh2.setPreferredSize(new java.awt.Dimension(69, 30));
         refresh2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refresh2ActionPerformed(evt);
@@ -1248,20 +1267,24 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(NonSessionShowTable);
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 51, 204));
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         jButton6.setText("Add Non-Overlap  Session");
+        jButton6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(0, 51, 204));
+        jButton9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Button-Delete-icon_1_20x20.png"))); // NOI18N
         jButton9.setText("clear");
+        jButton9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -1275,17 +1298,6 @@ public class sessions extends javax.swing.JFrame {
         contnt2.setLayout(contnt2Layout);
         contnt2Layout.setHorizontalGroup(
             contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contnt2Layout.createSequentialGroup()
-                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contnt2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(contnt2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(refresh2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 37, Short.MAX_VALUE))
             .addGroup(contnt2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1305,10 +1317,7 @@ public class sessions extends javax.swing.JFrame {
                                     .addComponent(nonCombo3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(48, 48, 48)
                                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(contnt2Layout.createSequentialGroup()
-                                        .addComponent(selectedNon3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(selectedNon3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(contnt2Layout.createSequentialGroup()
                                         .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt2Layout.createSequentialGroup()
@@ -1317,13 +1326,26 @@ public class sessions extends javax.swing.JFrame {
                                             .addGroup(contnt2Layout.createSequentialGroup()
                                                 .addComponent(selectedNon1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)))
-                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(errorMsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 38, Short.MAX_VALUE)))
+                        .addGap(0, 36, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(contnt2Layout.createSequentialGroup()
+                .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(contnt2Layout.createSequentialGroup()
+                            .addGap(28, 28, 28)
+                            .addComponent(id2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(contnt2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(refresh2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 35, Short.MAX_VALUE))
         );
         contnt2Layout.setVerticalGroup(
             contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1334,7 +1356,7 @@ public class sessions extends javax.swing.JFrame {
                         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(refresh2)))
+                        .addComponent(refresh2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(id2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1352,13 +1374,13 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nonCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(selectedNon2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9))
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(contnt2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nonCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(selectedNon3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1390,9 +1412,10 @@ public class sessions extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(parallelTable);
 
-        refresh3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        refresh3.setForeground(new java.awt.Color(51, 204, 0));
+        refresh3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/update.png"))); // NOI18N
         refresh3.setText("Refresh");
+        refresh3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        refresh3.setPreferredSize(new java.awt.Dimension(69, 30));
         refresh3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refresh3ActionPerformed(evt);
@@ -1457,10 +1480,11 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 51, 204));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         jButton7.setText("Add Parallel Session");
+        jButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -1482,10 +1506,11 @@ public class sessions extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(ParallelSessionShowTable);
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(0, 51, 204));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Button-Delete-icon_1_20x20.png"))); // NOI18N
         jButton10.setText("clear");
+        jButton10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton10.setPreferredSize(new java.awt.Dimension(69, 30));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -1509,7 +1534,7 @@ public class sessions extends javax.swing.JFrame {
                         .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(refresh3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 34, Short.MAX_VALUE))
+                .addGap(0, 32, Short.MAX_VALUE))
             .addGroup(contnt3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1547,7 +1572,7 @@ public class sessions extends javax.swing.JFrame {
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         contnt3Layout.setVerticalGroup(
             contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1558,7 +1583,7 @@ public class sessions extends javax.swing.JFrame {
                         .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contnt3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(refresh3)))
+                        .addComponent(refresh3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(id3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1576,7 +1601,7 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(parallelCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(selectedParallel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10))
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contnt3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1610,7 +1635,9 @@ public class sessions extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("End Time");
 
+        addPreferedSession.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         addPreferedSession.setText("Add Session");
+        addPreferedSession.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         addPreferedSession.setPreferredSize(new java.awt.Dimension(80, 33));
         addPreferedSession.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1618,7 +1645,9 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        btnClearPreSession.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Button-Delete-icon_1_20x20.png"))); // NOI18N
         btnClearPreSession.setText("Clear");
+        btnClearPreSession.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         btnClearPreSession.setPreferredSize(new java.awt.Dimension(80, 33));
         btnClearPreSession.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1640,48 +1669,42 @@ public class sessions extends javax.swing.JFrame {
             .addGroup(contnt4Layout.createSequentialGroup()
                 .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contnt4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(id4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(contnt4Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
                         .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(contnt4Layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(id4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(chkBoxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(contnt4Layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
                                 .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel12))
+                                .addGap(29, 29, 29)
+                                .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(chkBoxDay, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(contnt4Layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
+                                        .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(53, 53, 53)
+                                        .addComponent(jLabel14)
                                         .addGap(18, 18, 18)
-                                        .addComponent(chkBoxRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(contnt4Layout.createSequentialGroup()
-                                        .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel12))
-                                        .addGap(29, 29, 29)
-                                        .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(chkBoxDay, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(contnt4Layout.createSequentialGroup()
-                                                .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(53, 53, 53)
-                                                .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(contnt4Layout.createSequentialGroup()
-                                                        .addComponent(addPreferedSession, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(btnClearPreSession, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(contnt4Layout.createSequentialGroup()
-                                                        .addComponent(jLabel14)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))))))
-                        .addGap(0, 112, Short.MAX_VALUE)))
-                .addContainerGap())
+                                        .addGap(167, 167, 167)
+                                        .addComponent(addPreferedSession, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnClearPreSession, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                .addContainerGap(120, Short.MAX_VALUE))
+            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contnt4Layout.setVerticalGroup(
             contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contnt4Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(id4)
                 .addGap(46, 46, 46)
                 .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1699,11 +1722,11 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(txt_sTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(txt_eTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(62, 62, 62)
                 .addGroup(contnt4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClearPreSession, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addPreferedSession, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Preferred Session", contnt4);
@@ -1726,14 +1749,18 @@ public class sessions extends javax.swing.JFrame {
 
         chkBox_sDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
 
+        btnAddNot_A_T_Session.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         btnAddNot_A_T_Session.setText("Submit");
+        btnAddNot_A_T_Session.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         btnAddNot_A_T_Session.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddNot_A_T_SessionActionPerformed(evt);
             }
         });
 
+        BtnClearNAT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Button-Delete-icon_1_20x20.png"))); // NOI18N
         BtnClearNAT.setText("Clear");
+        BtnClearNAT.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         BtnClearNAT.setPreferredSize(new java.awt.Dimension(80, 33));
         BtnClearNAT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1741,7 +1768,9 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
+        BtnDeleteNAT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/delete.png"))); // NOI18N
         BtnDeleteNAT.setText("Delete");
+        BtnDeleteNAT.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         BtnDeleteNAT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnDeleteNATActionPerformed(evt);
@@ -1866,7 +1895,7 @@ public class sessions extends javax.swing.JFrame {
                     .addComponent(BtnDeleteNAT, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Not Available Time", contnt5);
@@ -2313,6 +2342,11 @@ public class sessions extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Successfully added!!!");
 
+            chkBoxRoom.setSelectedIndex(0);
+        chkBoxDay.setSelectedIndex(0);
+        txt_sTime.setText("");
+        txt_eTime.setText("");
+            
        }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
         }
@@ -2415,6 +2449,14 @@ public class sessions extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Successfully added!!!");
             table_update();
+            
+            chkBoxlec.setSelectedIndex(0);
+        chkBoxGrp.setSelectedIndex(0);
+        chkBoxSubGrp.setSelectedIndex(0);
+        chkBox_sDay.setSelectedIndex(0);
+        chkBox_sessionID.setSelectedIndex(0);
+        txt_sTime1.setText("");
+        txt_eTime1.setText("");
 
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);

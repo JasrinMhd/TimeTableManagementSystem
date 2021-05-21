@@ -268,7 +268,7 @@ public class subject extends javax.swing.JFrame {
                 .addComponent(generate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(logout)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         heading.setBackground(new java.awt.Color(153, 153, 255));
@@ -339,28 +339,40 @@ public class subject extends javax.swing.JFrame {
             }
         });
 
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         btnAdd.setText("ADD");
+        btnAdd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        btnAdd.setPreferredSize(new java.awt.Dimension(69, 30));
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Apps-system-software-update-icon_24x24.png"))); // NOI18N
         btnUpdate.setText("UPDATE");
+        btnUpdate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        btnUpdate.setPreferredSize(new java.awt.Dimension(69, 30));
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/delete.png"))); // NOI18N
         btnDelete.setText("DELETE");
+        btnDelete.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        btnDelete.setPreferredSize(new java.awt.Dimension(69, 30));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
+        btnRest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/update.png"))); // NOI18N
         btnRest.setText("Reset");
+        btnRest.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
+        btnRest.setPreferredSize(new java.awt.Dimension(69, 30));
         btnRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRestActionPerformed(evt);
@@ -496,10 +508,10 @@ public class subject extends javax.swing.JFrame {
                         .addComponent(jLabel4)))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnRest)
-                    .addComponent(btnDelete))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

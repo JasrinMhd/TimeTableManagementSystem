@@ -60,7 +60,6 @@ public class workingDaysHours extends javax.swing.JFrame {
         logo = new javax.swing.JPanel();
         logoLab = new javax.swing.JLabel();
         contnt = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -79,6 +78,7 @@ public class workingDaysHours extends javax.swing.JFrame {
         chk_saturday = new javax.swing.JCheckBox();
         chk_sunday = new javax.swing.JCheckBox();
         jSpinner_W_time = new javax.swing.JSpinner();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -253,9 +253,7 @@ public class workingDaysHours extends javax.swing.JFrame {
                 .addComponent(logoLab))
         );
 
-        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel2.setText("                            Add Working Days and Hours");
+        contnt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 255)));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Number of Working Days");
@@ -270,8 +268,9 @@ public class workingDaysHours extends javax.swing.JFrame {
 
         jLabel6.setText("hours");
 
-        updateWDH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/update.png"))); // NOI18N
+        updateWDH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/Apps-system-software-update-icon_24x24.png"))); // NOI18N
         updateWDH.setText("UPDATE");
+        updateWDH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         updateWDH.setPreferredSize(new java.awt.Dimension(69, 30));
         updateWDH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,6 +280,7 @@ public class workingDaysHours extends javax.swing.JFrame {
 
         deleteWDH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/delete.png"))); // NOI18N
         deleteWDH.setText("DELETE");
+        deleteWDH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         deleteWDH.setPreferredSize(new java.awt.Dimension(69, 30));
         deleteWDH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,6 +290,7 @@ public class workingDaysHours extends javax.swing.JFrame {
 
         addWDH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/icons8-insert-button-48 (1).png"))); // NOI18N
         addWDH.setText("  Add");
+        addWDH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 3, true));
         addWDH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addWDHActionPerformed(evt);
@@ -340,11 +341,17 @@ public class workingDaysHours extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 51, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Add Working Days And Hours");
+        jLabel10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 255)));
+
         javax.swing.GroupLayout contntLayout = new javax.swing.GroupLayout(contnt);
         contnt.setLayout(contntLayout);
         contntLayout.setHorizontalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(contntLayout.createSequentialGroup()
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contntLayout.createSequentialGroup()
@@ -390,14 +397,15 @@ public class workingDaysHours extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contntLayout.setVerticalGroup(
             contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contntLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contntLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGap(40, 40, 40)
                         .addGroup(contntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cBoxNo_WD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
@@ -840,227 +848,7 @@ public class workingDaysHours extends javax.swing.JFrame {
         }
 
           
-          
-//           String w_days = model.getValueAt(i, 2).toString();
-//           if(w_days.equals("Monday Tuesday Wednesday Thursday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(true);  
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           if(w_days.equals("Monday Wednesday Thursday ")){
-//               chk_monday.setSelected(true);
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(true); 
-//               chk_tuesday.setSelected(false);
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           if(w_days.equals("Tuesday ")){
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(true);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);  
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           if(w_days.equals("Wednesday ")){
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false);
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(false);  
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           if(w_days.equals("Thursday ")){
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(true);  
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           if(w_days.equals("Friday ")){
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);  
-//               chk_friday.setSelected(true);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           
-//           if(w_days.equals("Saturday ")){
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);  
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//           if(w_days.equals("Sunday ")){
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);  
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(true);
-//                    
-//           }
-//           
-//           
-//           
-//           
-//           
-//           
-//           if(w_days.equals("Monday Tuesday Wednesday Thursday Friday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(true);  
-//               chk_friday.setSelected(true);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(true);  
-//               chk_friday.setSelected(true);
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(false);
-//                    
-//           }
-//            if(w_days.equals("Monday Tuesday Wednesday Thursday Friday Saturday Sunday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(true);  
-//               chk_friday.setSelected(true);
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//                    
-//           }
-//            
-//           if(w_days.equals("Monday Tuesday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true); 
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//           }
-//           if(w_days.equals("Monday Tuesday Wednesday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true); 
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//           }
-//            if(w_days.equals("Monday Tuesday Saturday Sunday ")){
-//                chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//           }
-//            if(w_days.equals("Monday Tuesday Friday Saturday Sunday ")){
-//                chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(true);
-//           }
-//             if(w_days.equals("Monday Tuesday Thursday Friday ")){
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(true);
-//               chk_friday.setSelected(true);
-//               chk_thursday.setSelected(true);
-//               chk_saturday.setSelected(false);
-//               chk_sunday.setSelected(false);
-//               chk_wednesday.setSelected(false);
-//               
-//           }
-//           
-//           if(w_days.equals("Monday Saturday Sunday ")){
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_monday.setSelected(true);
-//               chk_tuesday.setSelected(false); 
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//           }
-//           if(w_days.equals("Tuesday Saturday Sunday ")){
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(true); 
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//           }
-//           if(w_days.equals("Wednesday Saturday Sunday ")){
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false); 
-//               chk_wednesday.setSelected(true);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//           }
-//           if(w_days.equals("Thursday Saturday Sunday ")){
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false); 
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(true);
-//               chk_friday.setSelected(false);
-//           }
-//           if(w_days.equals("Friday Saturday Sunday ")){
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false); 
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(true);
-//           }
-//           if(w_days.equals("Saturday Sunday ")){
-//               chk_saturday.setSelected(true);
-//               chk_sunday.setSelected(true);
-//               chk_monday.setSelected(false);
-//               chk_tuesday.setSelected(false); 
-//               chk_wednesday.setSelected(false);
-//               chk_thursday.setSelected(false);
-//               chk_friday.setSelected(false);
-//           }
+      
 
          
         jSpinner_W_time.setValue(Integer.valueOf(model.getValueAt(i, 3).toString()));
@@ -1191,7 +979,7 @@ public class workingDaysHours extends javax.swing.JFrame {
     private javax.swing.JButton generate;
     private javax.swing.JPanel heading;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
