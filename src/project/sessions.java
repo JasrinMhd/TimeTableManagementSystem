@@ -532,7 +532,6 @@ public class sessions extends javax.swing.JFrame {
             }
         });
 
-        session.setBackground(new java.awt.Color(153, 153, 153));
         session.setText("Sessions");
         session.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         session.setPreferredSize(new java.awt.Dimension(131, 30));
@@ -870,6 +869,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel26.setText("Select  your 2nd Session ID");
 
+        ConseCombo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ConseCombo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ConseCombo1MouseClicked(evt);
@@ -918,6 +918,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel27.setText("Select  your 1st Session ID");
 
+        ConseCombo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ConseCombo2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ConseCombo2MouseClicked(evt);
@@ -972,6 +973,7 @@ public class sessions extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 51, 204));
         jButton5.setText("Add Consecutive Session");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -981,6 +983,7 @@ public class sessions extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton8.setForeground(new java.awt.Color(0, 51, 204));
         jButton8.setText("clear");
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -1116,6 +1119,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel31.setText("Select your 1st Session ID");
 
+        nonCombo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nonCombo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 nonCombo1MousePressed(evt);
@@ -1129,6 +1133,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel32.setText("Select your 2nd Session ID");
 
+        nonCombo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nonCombo2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 nonCombo2MousePressed(evt);
@@ -1142,6 +1147,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel33.setText("Select your 3rd Session ID");
 
+        nonCombo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nonCombo3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 nonCombo3MousePressed(evt);
@@ -1171,6 +1177,7 @@ public class sessions extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 51, 204));
         jButton6.setText("Add Non-Overlap  Session");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -1180,6 +1187,7 @@ public class sessions extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton9.setForeground(new java.awt.Color(0, 51, 204));
         jButton9.setText("clear");
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -1323,6 +1331,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel37.setText("Select your 2nd Session ID");
 
+        parallelCombo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         parallelCombo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 parallelCombo1MousePressed(evt);
@@ -1336,6 +1345,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel38.setText("Select your 1st Session ID");
 
+        parallelCombo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         parallelCombo2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 parallelCombo2MousePressed(evt);
@@ -1355,6 +1365,7 @@ public class sessions extends javax.swing.JFrame {
 
         jLabel39.setText("Select your 3rd Session ID");
 
+        parallelCombo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         parallelCombo3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 parallelCombo3MousePressed(evt);
@@ -1375,6 +1386,7 @@ public class sessions extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 51, 204));
         jButton7.setText("Add Parallel Session");
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -1399,6 +1411,7 @@ public class sessions extends javax.swing.JFrame {
         jButton10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton10.setForeground(new java.awt.Color(0, 51, 204));
         jButton10.setText("clear");
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
